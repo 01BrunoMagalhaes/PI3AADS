@@ -1,4 +1,6 @@
-
+#include <Wire.h> //Built-in
+#include <RtcDS3231.h> //RTC
+#include <OneWire.h> //Temperatura
 //Declarando portas
 //Relés
 #define portaRele1 1
@@ -11,14 +13,13 @@
 #define portaRele8 8
 //PWM's
 #define portaPWM1 9
-#define portaPWM2 10
+//#define portaPWM2 10
 //Temperatura
-#define portaTemperatura 11
+#define portaTemperatura 10
 //boia
 #define portaBoia 12
 
 void setup() {
-  
   pinMode(portaRele1, OUTPUT);
   pinMode(portaRele2, OUTPUT);
   pinMode(portaRele3, OUTPUT);
@@ -28,12 +29,13 @@ void setup() {
   pinMode(portaRele7, OUTPUT);
   pinMode(portaRele8, OUTPUT);
   pinMode(portaBoia, INPUT);
-  
-  
+
+  inicializaRtc();
   Serial.begin(9600);
   
 }
 
 void loop() {
-  
+  Serial.println(retornaTudo());
+ delay(1000);
 }
