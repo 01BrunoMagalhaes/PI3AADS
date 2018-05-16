@@ -30,13 +30,14 @@ void setup() {
   pinMode(portaRele8, OUTPUT);
   pinMode(portaBoia, INPUT);
 
-  inicializarRtc();
+  inicializarEthernet();
   
   Serial.begin(9600);
 }
 
 void loop() {
-  Serial.println(retornarData());
-  Serial.println(retornarHora());
- delay(2000);
+  Serial.println("iniciando teste Ethernet");
+  teste();
+  Serial.println("Teste Ethernet finalizado");
+  delay(2000);
 }
