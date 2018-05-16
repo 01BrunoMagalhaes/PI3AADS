@@ -30,12 +30,13 @@ void setup() {
   pinMode(portaRele8, OUTPUT);
   pinMode(portaBoia, INPUT);
 
-  inicializaRtc();
-  Serial.begin(9600);
+  inicializarRtc();
   
+  Serial.begin(9600);
 }
 
 void loop() {
-  Serial.println(retornaTudo());
- delay(1000);
+  Serial.println(retornarData());
+  Serial.println(retornarHora());
+ delay(2000);
 }

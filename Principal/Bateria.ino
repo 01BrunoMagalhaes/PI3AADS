@@ -1,5 +1,5 @@
 RtcDS3231<TwoWire> Rtc(Wire);
-void  inicializaRtc(){
+void  inicializarRtc(){
   Rtc.Begin();
   if(!Rtc.GetIsRunning()){
     Rtc.SetIsRunning(true);
@@ -8,9 +8,8 @@ void  inicializaRtc(){
   Rtc.SetSquareWavePin(DS3231SquareWavePin_ModeNone);
 }
    
-   RtcDateTime now = Rtc.GetDateTime();
 
-String formatDate(const RtcDateTime& dt, String format){
+String formatarData(const RtcDateTime& dt, String format){
   String d = dt.Day() < 10 ? "0" + String(dt.Day()) : String(dt.Day()) ;
   String m = dt.Month() < 10 ? "0" + String(dt.Month()) : String(dt.Month()) ;
   String y = String(dt.Year()) ;
@@ -20,7 +19,7 @@ String formatDate(const RtcDateTime& dt, String format){
   return format;
 }
  
-String formatTime(const RtcDateTime& dt, String format){
+String formatarHora(const RtcDateTime& dt, String format){
   String h = dt.Hour() < 10 ? "0" + String(dt.Hour()) : String(dt.Hour()) ;
   String m = dt.Minute() < 10 ? "0" + String(dt.Minute()) : String(dt.Minute()) ;
   String s = dt.Second() < 10 ? "0" + String(dt.Second()) : String(dt.Second()) ;
@@ -30,8 +29,14 @@ String formatTime(const RtcDateTime& dt, String format){
   return format;
 }
 
-String retornaTudo(){
- return String("Data atual: " + formatDate(now,"d/m/y") + " Hora atual: " + formatTime(now,"h:m:s"));
+String retornarData(){
+  RtcDateTime now = Rtc.GetDateTime();
+  return String(formatarData(now,"d/m/y"));
+}
+
+String retornarHora(){
+  RtcDateTime now = Rtc.GetDateTime();
+  return String(formatarHora(now,"h:m:s"));
 }
 
 
