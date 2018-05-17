@@ -4,7 +4,7 @@
 
 //Definicoes de IP, mascara de rede e gateway
 byte mac[] = {0xDE, 0xAD, 0xBE, 0xEF, 0xFE, 0xED};
-IPAddress ip(192,168,15,4);          //Define o endereco IP
+IPAddress ip(192,168,15,24);          //Define o endereco IP
 IPAddress gateway(192,168,15,1);      //Define o gateway
 IPAddress subnet(255, 255, 255, 0); //Define a máscara de rede
 
@@ -36,25 +36,9 @@ void teste() {
   // Create the root object
   JsonObject& root = jsonBuffer.createObject();
 
-  // Create the "analog" array
-  JsonArray& analogValues = root.createNestedArray("analog");
-  for (int pin = 0; pin < 6; pin++) {
-    // Read the analog input
-    int value = analogRead(pin);
-
-    // Add the value at the end of the array
-    analogValues.add(value);
-  }
-
-  // Create the "digital" array
-  JsonArray& digitalValues = root.createNestedArray("digital");
-  for (int pin = 0; pin < 14; pin++) {
-    // Read the digital input
-    int value = digitalRead(pin);
-
-    // Add the value at the end of the array
-    digitalValues.add(value);
-  }
+  // Criando objeto temperatura
+  JsonArray& valorTemperatura = root.createNestedArray("temperatura");
+    valorTemperatura.add(temperaturaAtual());
 
   Serial.print(F("Sending: "));
   root.printTo(Serial);
@@ -63,7 +47,6 @@ void teste() {
   // Write response headers
   client.println("HTTP/1.0 200 OK");
   client.println("Content-Type: application/json");
-  client.println("Connection: close");
   client.println();
 
   // Write JSON document
