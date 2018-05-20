@@ -4,11 +4,11 @@
 
 //Definicoes de IP, mascara de rede e gateway
 byte mac[] = {0xDE, 0xAD, 0xBE, 0xEF, 0xFE, 0xED};
-IPAddress ip(192,168,15,25);          //Define o endereco IP
+IPAddress ip(192,168,15,100);          //Define o endereco IP
 IPAddress gateway(192,168,15,1);      //Define o gateway
 IPAddress subnet(255, 255, 255, 0); //Define a máscara de rede
 
-String conteudo;
+String conteudo = "", acao = "" ;
 char c;
 
 EthernetServer server(80);
@@ -53,6 +53,8 @@ void teste() {
     }      
     delay(1);
     client.stop();
+    conteudo = "";
+    acao = "";
   }
 }
 
