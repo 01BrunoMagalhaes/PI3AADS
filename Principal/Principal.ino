@@ -30,15 +30,25 @@ void setup() {
   pinMode(portaRele8, OUTPUT);
   pinMode(portaBoia, INPUT);
 
+  inicializarRtc();
   inicializarEthernet();
   
   Serial.begin(9600);
 }
 
 void loop() {
-  Serial.println("iniciando teste Ethernet");
+  Serial.println("");
+  Serial.println("Inicio loop.");
+  
+  Serial.print("Temperatura: ");
   Serial.println(temperaturaAtual());
-  teste();
-  Serial.println("Teste Ethernet finalizado");
+  Serial.print("Data: ");
+  Serial.print(retornarData());
+  Serial.print(" Hora: ");
+  Serial.println(retornarHora());
+  
+  verificaClients();
+  
+  Serial.println("Final loop."); Serial.println("");
   delay(2000);
 }
