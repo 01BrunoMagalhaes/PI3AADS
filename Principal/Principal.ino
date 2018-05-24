@@ -48,7 +48,10 @@ void loop() {
   Serial.println(retornarHora());
   
   verificaClients();
-  
+
+  ligarDesligarRele(portaRele7, true);
+  delay(3000);
+  ligarDesligarRele(portaRele7, false);
   Serial.println("Final loop."); Serial.println("");
   delay(2000);
 }
