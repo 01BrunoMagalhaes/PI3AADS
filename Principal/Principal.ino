@@ -37,21 +37,12 @@ void setup() {
 }
 
 void loop() {
-  Serial.println("");
-  Serial.println("Inicio loop.");
+  Serial.println(""); Serial.println("Inicio loop.");
   
-  Serial.print("Temperatura: ");
-  Serial.println(temperaturaAtual());
-  Serial.print("Data: ");
-  Serial.print(retornarData());
-  Serial.print(" Hora: ");
-  Serial.println(retornarHora());
+  Serial.print("Temperatura: "); Serial.println(temperaturaAtual());
   
   verificaClients();
 
-  ligarDesligarRele(portaRele7, true);
-  delay(3000);
-  ligarDesligarRele(portaRele7, false);
   Serial.println("Final loop."); Serial.println("");
   delay(2000);
 }

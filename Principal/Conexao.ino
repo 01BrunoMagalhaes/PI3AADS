@@ -8,7 +8,7 @@ IPAddress ip(192,168,15,11);          //Define o endereco IP
 IPAddress gateway(192,168,15,10);      //Define o gateway
 IPAddress subnet(255, 255, 255, 0); //Define a máscara de rede
 
-String conteudo = "", acao = "";
+String conteudo = "", acoes = "";
 char c;
 
 EthernetServer server(80);
@@ -36,12 +36,14 @@ void verificaClients() {
         }
 
         if (c == 'n' && currentLineIsBlank) {
-          
-          verificarComandos(conteudo);  
+
+            verificarComandos(conteudo);
 
             StaticJsonBuffer<500> jsonBuffer; JsonObject& root = jsonBuffer.createObject(); JsonArray& valorTemperatura = root.createNestedArray("temperatura");
             valorTemperatura.add(temperaturaAtual()); Serial.print(F("Sending: ")); root.printTo(Serial); Serial.println(); client.println("HTTP/1.0 200 OK");
-            client.println("Content-Type: application/json"); client.println("Connection: close"); client.println("Refresh: 5"); client.println(); root.prettyPrintTo(client);  
+            client.println("Content-Type: application/json"); client.println("Connection: close"); 
+            //client.println("Refresh: 5"); 
+            client.println(); root.prettyPrintTo(client);  
           
           break;
         }        
@@ -57,7 +59,7 @@ void verificaClients() {
     delay(1);
     client.stop();
     conteudo = "";
-    acao = "";
+    acoes = "";
   }
 }
 
