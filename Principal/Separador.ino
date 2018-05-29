@@ -13,7 +13,21 @@ void verificarComandos(String comandos){
 
   while(!acoes.equals("")){
     String acaoSeparada = "";
-    acaoSeparada = separaAcao(acoes);
+    //acaoSeparada = separaAcao(acoes);
+    
+    Serial.print("Ações URL inicio: "); Serial.println(acoes);
+  
+  if(acoes.indexOf("&") != -1){
+    int inicio = 0;
+    int fim = acoes.indexOf("&") + 1;
+      
+    acaoSeparada = acoes.substring(inicio, fim);
+  }else{
+    int inicio = 0;
+    int fim = acoes.length();
+    acaoSeparada = acoes.substring(inicio, fim);
+  }
+    
     acoes.replace(acaoSeparada, "");
     acaoSeparada.replace("&","");
     
@@ -22,19 +36,4 @@ void verificarComandos(String comandos){
     Serial.print("Ações final: "); Serial.println(acoes);
   }
   
-}
-
-String separaAcao(String acoesURL){
-  Serial.print("Ações URL inicio: "); Serial.println(acoesURL);
-  
-  if(acoesURL.indexOf("&") != -1){
-    int inicio = 0;
-    int fim = acoesURL.indexOf("&") + 1;
-      
-    return acoesURL.substring(inicio, fim);
-  }else{
-    int inicio = 0;
-    int fim = acoesURL.length();
-    return acoesURL.substring(inicio, fim);
-  }
 }
