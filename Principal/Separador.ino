@@ -6,9 +6,7 @@ void verificarComandos(String comandos){
   Serial.print("Conteúdo da URL: "); Serial.println(comandos);
   //Serial.print("Inicio: "); Serial.println(i);
   //Serial.print("Fim: "); Serial.println(f);
-
   acoes = comandos.substring(i,f);
-  
   Serial.print("Conteúdo ações: "); Serial.println(acoes);
 
   while(!acoes.equals("")){
@@ -16,20 +14,26 @@ void verificarComandos(String comandos){
     //acaoSeparada = separaAcao(acoes);
     
     Serial.print("Ações URL inicio: "); Serial.println(acoes);
-  
-  if(acoes.indexOf("&") != -1){
-    int inicio = 0;
-    int fim = acoes.indexOf("&") + 1;
-      
-    acaoSeparada = acoes.substring(inicio, fim);
-  }else{
-    int inicio = 0;
-    int fim = acoes.length();
-    acaoSeparada = acoes.substring(inicio, fim);
-  }
     
+    if(acoes.indexOf("&") != -1){
+      int inicio = 0;
+      int fim = acoes.indexOf("&") + 1;
+        
+      acaoSeparada = acoes.substring(inicio, fim);
+    }else{
+      int inicio = 0;
+      int fim = acoes.length();
+      acaoSeparada = acoes.substring(inicio, fim);
+    }
+
     acoes.replace(acaoSeparada, "");
     acaoSeparada.replace("&","");
+
+    if(acaoSeparada.equalsIgnoreCase("t1=1")){
+      digitalWrite(7, LOW);
+    }else if(acaoSeparada.equalsIgnoreCase("t1=0")){
+      digitalWrite(7, HIGH);
+    }
     
     Serial.print("Ação separada: "); Serial.println(acaoSeparada);
     
