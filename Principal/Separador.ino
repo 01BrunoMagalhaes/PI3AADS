@@ -1,33 +1,40 @@
-void verificarComandos(String conteudo){
-  int inicio = conteudo.indexOf("/") +1;
-  int fim = conteudo.indexOf("&end");
+void verificarComandos(String comandos){
+  String acoes =  "";
+  int i = comandos.indexOf("/") +1;
+  int f = comandos.indexOf(" HTTP");
 
-  acoes = " " + conteudo.substring(inicio, fim) + "&";
+  Serial.print("Conteúdo da URL: "); Serial.println(comandos);
+  //Serial.print("Inicio: "); Serial.println(i);
+  //Serial.print("Fim: "); Serial.println(f);
+
+  acoes = comandos.substring(i,f);
+  
+  Serial.print("Conteúdo ações: "); Serial.println(acoes);
 
   while(!acoes.equals("")){
-    
     String acaoSeparada = "";
     acaoSeparada = separaAcao(acoes);
-
+    acoes.replace(acaoSeparada, "");
+    acaoSeparada.replace("&","");
+    
     Serial.print("Ação separada: "); Serial.println(acaoSeparada);
     
-    acoes.replace(acaoSeparada, "");
-    acoes.replace(" &","");
-
-    Serial.print("Ações final: ");
-    Serial.println(acoes);
+    Serial.print("Ações final: "); Serial.println(acoes);
   }
   
 }
 
-String separaAcao(String acoes){
-  int inicio = acoes.indexOf(" ") +1;
-  int fim = acoes.indexOf("&");
-
-    Serial.print("Ações inicio: "); Serial.println(acoes);
-    Serial.print("Inicio: "); Serial.println(inicio);
-    Serial.print("Fim: "); Serial.println(fim);
+String separaAcao(String acoesURL){
+  Serial.print("Ações URL inicio: "); Serial.println(acoesURL);
   
-  return acoes.substring(inicio, fim);
+  if(acoesURL.indexOf("&") != -1){
+    int inicio = 0;
+    int fim = acoesURL.indexOf("&") + 1;
+      
+    return acoesURL.substring(inicio, fim);
+  }else{
+    int inicio = 0;
+    int fim = acoesURL.length();
+    return acoesURL.substring(inicio, fim);
+  }
 }
-

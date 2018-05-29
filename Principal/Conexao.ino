@@ -8,7 +8,7 @@ IPAddress ip(192,168,15,11);          //Define o endereco IP
 IPAddress gateway(192,168,15,10);      //Define o gateway
 IPAddress subnet(255, 255, 255, 0); //Define a máscara de rede
 
-String conteudo = "", acoes = "";
+String conteudo = "";
 char c;
 
 EthernetServer server(80);
@@ -59,7 +59,6 @@ void verificaClients() {
     delay(1);
     client.stop();
     conteudo = "";
-    acoes = "";
   }
 }
 
