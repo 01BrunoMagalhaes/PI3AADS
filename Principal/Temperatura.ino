@@ -8,6 +8,10 @@ void verificaAquecerResfriar(String a){
 }
 
 void verificaTemperatura(float baixa, float alta){
+  if(baixa == 0 && alta == 0){
+    ligarDesligarRele(r1, 0);
+    ligarDesligarRele(r2, 0);
+  }else{
     if(temperaturaAtual() >= alta){
       Serial.println(F("Ligando resfriamento."));
       ligarDesligarRele(r1, 1);
@@ -17,6 +21,7 @@ void verificaTemperatura(float baixa, float alta){
     }else{
       ligarDesligarRele(r1, 0);
       ligarDesligarRele(r2, 0);
+    }
   }
 }
 
