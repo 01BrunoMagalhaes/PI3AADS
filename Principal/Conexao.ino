@@ -35,34 +35,36 @@ void verificaClients() {
         }
 
         if (c == 'n' && currentLineIsBlank) {
-
           String acao =  "";
           int i = conteudo.indexOf("/") +1;
-          int f = i + 3;
+          acao = conteudo.substring(i, i + 3);
         
-          Serial.print(F("Conteúdo da URL: ")); Serial.println(conteudo);
-          acao = conteudo.substring(i,f);
-          Serial.print(F("Conteúdo ação: ")); Serial.println(acao);
+          //Serial.print(F("Conteúdo da URL: ")); Serial.println(conteudo);
+          //Serial.print(F("Conteúdo ação: ")); Serial.println(acao);
+          
           if(!acao.equalsIgnoreCase("")){
-            if(acao.equalsIgnoreCase("01/")){
+            if(acao.equalsIgnoreCase("00 ")){
+              StaticJsonBuffer<500> jsonBuffer; JsonObject& root = jsonBuffer.createObject(); 
+              JsonArray& valorTemperatura = root.createNestedArray("temperatura"); valorTemperatura.add(temperaturaAtual()); 
+              //JsonArray& data = root.createNestedArray("data"); data.add(retornarData());
+              //JsonArray& hora = root.createNestedArray("hora"); hora.add(retornarHora());
+              //JsonArray& reles = root.createNestedArray("tomadas"); 
+              //reles.add(statusRele(r1)); reles.add(statusRele(r2)); reles.add(statusRele(r3)); reles.add(statusRele(r4)); 
+              //reles.add(statusRele(r5)); reles.add(statusRele(r6)); reles.add(statusRele(r7)); reles.add(statusRele(r8));
+              client.println("HTTP/1.0 200 OK"); client.println("Content-Type: application/json"); client.println("Connection: close"); client.println("charset: utf-8");
+              //client.println("Refresh: 5"); 
+              client.println(); root.prettyPrintTo(client);  
+              break;
+            }else if(acao.equalsIgnoreCase("01/")){
               int i = conteudo.indexOf("01/") +3;
               int f = conteudo.indexOf(" HTTP");
               verificaReles(conteudo.substring(i,f));
+              client.println("HTTP/1.0 200 OK");
+            }else{
+              client.println("HTTP/1.0 200 OK");
             }
           }  
-          StaticJsonBuffer<500> jsonBuffer; JsonObject& root = jsonBuffer.createObject(); 
-          JsonArray& valorTemperatura = root.createNestedArray("temperatura"); valorTemperatura.add(temperaturaAtual()); 
-          //JsonArray& data = root.createNestedArray("data"); data.add(retornarData());
-          //JsonArray& hora = root.createNestedArray("hora"); hora.add(retornarHora());
-          //JsonArray& reles = root.createNestedArray("tomadas"); 
-          //reles.add(statusRele(r1)); reles.add(statusRele(r2)); reles.add(statusRele(r3)); reles.add(statusRele(r4)); 
-          //reles.add(statusRele(r5)); reles.add(statusRele(r6)); reles.add(statusRele(r7)); reles.add(statusRele(r8));
-          //Serial.print(F("Sending: ")); 
-          root.printTo(Serial); 
-          Serial.println(); client.println("HTTP/1.0 200 OK"); client.println("Content-Type: application/json"); client.println("Connection: close"); client.println("charset: utf-8");
-          //client.println("Refresh: 5"); 
-          client.println(); root.prettyPrintTo(client);  
-        
+          client.println("HTTP/1.0 200 OK");
           break;
         }
       }        
