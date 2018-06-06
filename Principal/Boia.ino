@@ -1,5 +1,5 @@
 boolean isBoiaAcionada(){
-  int estado = digitalRead(portaBoia);
+  int estado = digitalRead(bo);
 //  Serial.println("Estado = " + String(estado));
   if(estado >= 1){
     return true;

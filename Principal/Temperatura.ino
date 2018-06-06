@@ -1,4 +1,17 @@
-OneWire  sensorTemp(portaTemperatura);
+OneWire  sensorTemp(t);
+
+void verificaTemperatura(float alta, float baixa){
+    if(temperaturaAtual() >= alta){
+      Serial.println(F("Ligando resfriamento."));
+      ligarDesligarRele(r1, true);
+    }else if(temperaturaAtual() <= baixa){
+      Serial.println(F("Ligando aquecimento."));
+      ligarDesligarRele(r2, true);
+    }else{
+      ligarDesligarRele(r1, false);
+      ligarDesligarRele(r2, false);
+  }
+}
 
 float temperaturaAtual(){
   byte i;
