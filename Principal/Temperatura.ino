@@ -3,13 +3,13 @@ OneWire  sensorTemp(t);
 void verificaTemperatura(float alta, float baixa){
     if(temperaturaAtual() >= alta){
       Serial.println(F("Ligando resfriamento."));
-      ligarDesligarRele(r1, true);
+      ligarDesligarRele(r1, 1);
     }else if(temperaturaAtual() <= baixa){
       Serial.println(F("Ligando aquecimento."));
-      ligarDesligarRele(r2, true);
+      ligarDesligarRele(r2, 1);
     }else{
-      ligarDesligarRele(r1, false);
-      ligarDesligarRele(r2, false);
+      ligarDesligarRele(r1, 0);
+      ligarDesligarRele(r2, 0);
   }
 }
 
