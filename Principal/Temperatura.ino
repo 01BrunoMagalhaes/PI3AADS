@@ -1,6 +1,13 @@
 OneWire  sensorTemp(t);
 
-void verificaTemperatura(float alta, float baixa){
+void verificaAquecerResfriar(String a){
+  if(!a.equalsIgnoreCase("")){
+    tMin = a.substring(0, a.indexOf("&")).toFloat();
+    tMax = a.substring(a.indexOf("&")+1, a.length()).toFloat();
+  }
+}
+
+void verificaTemperatura(float baixa, float alta){
     if(temperaturaAtual() >= alta){
       Serial.println(F("Ligando resfriamento."));
       ligarDesligarRele(r1, 1);

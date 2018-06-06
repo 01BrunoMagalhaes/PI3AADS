@@ -17,6 +17,9 @@
 #define t 2 //Temperatura
 #define bo 12 //boia
 
+float tMin = 0;
+float tMax = 0;
+
 void setup() {
   inicializarBoia();
   inicializarIluminacao();
@@ -30,7 +33,7 @@ void setup() {
 void loop() {
   Serial.println(F("")); Serial.println(F("Inicio loop."));
 
-  verificaTemperatura(27, 26);
+  verificaTemperatura(tMin, tMax);
   
   Serial.print(F("Temperatura: ")); Serial.println(temperaturaAtual());
   Serial.println(retornarData());
