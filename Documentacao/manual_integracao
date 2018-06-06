@@ -13,3 +13,11 @@ A interrogação deve ser substituida por 0 ou 1, onde 1 é para ligar e 0 para 
 Considerar também a posição, ela se refere ao número do rele; primeira posição irá modificar
 o relé 1. 
 ####################################################################
+Código: 02
+URL: "ip/02/27.1&28"
+Descrição: Modificar a temperatura minima e máxima, para consequentemente acionar o arrefecimento ou aquecimento.
+
+O primeiro parâmetro é a temperatura minima, no exemplo "27.1", e o segundo a temperatura máxima "28".
+Obs.: -Sempre separar os dois parâmetros através do caractere "&". 
+      -Caso os dois parâmetros sejam "0", o controle de temperatura não será feito, e os relés correspondetes serão desligados.	
+####################################################################
