@@ -9,7 +9,7 @@ Código: 01
 URL: "ip/01/????"
 Descrição: Modificar os reles.
 
-A interrogação é para modificar o status do relé, onde "1" é para ligar e "0" para desligar.
+A interrogação deve ser substituida por 0 ou 1, onde 1 é para ligar e 0 para desligar.
 Considerar também a posição, ela se refere ao número do rele; primeira posição irá modificar
 o relé 1. 
 ####################################################################
