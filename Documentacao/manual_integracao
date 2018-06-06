@@ -1,5 +1,15 @@
-Receber status dos módulos da aplicação:
+Receber um Json com todos status dos módulos:
 Código: 00
+URL: "ip/00"
 
+Json:
+"temperatura"
+####################################################################
 Código: 01
-Modificador dos reles
+URL: "ip/01/????"
+Descrição: Modificar os reles.
+
+A interrogação é para modificar o status do relé, onde "1" é para ligar e "0" para desligar.
+Considerar também a posição, ela se refere ao número do rele; primeira posição irá modificar
+o relé 1. 
+####################################################################
