@@ -1,3 +1,7 @@
+void inicializarBoia(){
+  pinMode(bo, INPUT);
+}
+
 boolean isBoiaAcionada(){
   int estado = digitalRead(bo);
 //  Serial.println("Estado = " + String(estado));
