@@ -12,6 +12,16 @@ boolean isBoiaAcionada(){
   }
 }
 
+void verificaNivelAgua(String a){
+  if(!a.equalsIgnoreCase("")){
+    if(a.substring(0,1).equalsIgnoreCase("1")){
+      validarNivel = true;
+    }else{
+      validarNivel = false;
+    }
+  }
+}  
+
 void verificaNivelAgua(boolean on){
   if(on){
     while(isBoiaAcionada()){

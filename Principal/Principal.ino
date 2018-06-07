@@ -19,7 +19,7 @@
 
 float tMin = 0;
 float tMax = 0;
-boolean validarNivel = true;
+boolean validarNivel = false;
 
 void setup() {
   inicializarBoia();
