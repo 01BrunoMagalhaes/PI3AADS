@@ -4,13 +4,21 @@ void inicializarBoia(){
 
 boolean isBoiaAcionada(){
   int estado = digitalRead(bo);
-//  Serial.println("Estado = " + String(estado));
+  Serial.print(F("Estado da boia: "));Serial.println(String(estado));
   if(estado >= 1){
     return true;
   }else if(estado < 1){
     return false;
   }
-  delay(1000);
+}
+
+void verificaNivelAgua(boolean on){
+  if(on){
+    while(isBoiaAcionada()){
+      ligarDesligarRele(r3, 1);
+    }
+  }
+  ligarDesligarRele(r3, 0);
 }
 
 

@@ -5,9 +5,9 @@
 //Relés
 #define r1 3 //Resfriamento
 #define r2 4 //Aquecedor
-#define r3 5
+#define r3 5 //Bomba nivel
 #define r4 6
-#define r5 7 
+//#define r5 7 
 #define r6 8
 #define r7 9 
 #define r8 13
@@ -15,10 +15,11 @@
 #define p1 8 //canal cor azul 
 #define p2 9 //canal cor branca
 #define t 2 //Temperatura
-#define bo 12 //boia
+#define bo 7 //boia
 
 float tMin = 0;
 float tMax = 0;
+boolean validarNivel = true;
 
 void setup() {
   inicializarBoia();
@@ -32,12 +33,11 @@ void setup() {
 
 void loop() {
   Serial.println(F("")); Serial.println(F("Inicio loop."));
+  Serial.print(F("Temperatura: ")); Serial.println(temperaturaAtual());
+  Serial.print(F("Data: ")); Serial.print(retornarData()); Serial.print(F(" Hora: ")); Serial.println(retornarHora());
 
   verificaTemperatura(tMin, tMax);
-  
-  Serial.print(F("Temperatura: ")); Serial.println(temperaturaAtual());
-  Serial.println(retornarData());
-  Serial.println(retornarHora());
+  verificaNivelAgua(validarNivel);
   verificaClients();
 
   Serial.println(F("Final loop.")); Serial.println(F(""));

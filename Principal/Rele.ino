@@ -1,7 +1,7 @@
 void inicializarReles(){
   pinMode(r1, OUTPUT); pinMode(r2, OUTPUT);
   pinMode(r3, OUTPUT); pinMode(r4, OUTPUT);
-  pinMode(r5, OUTPUT); 
+  //pinMode(r5, OUTPUT); 
   //pinMode(r6, OUTPUT);
   //pinMode(r7, OUTPUT); 
   pinMode(r8, OUTPUT);
@@ -37,10 +37,7 @@ String statusRele(int posicaoRele){
 
 void verificaReles(String a){
   if(!a.equalsIgnoreCase("")){
-    ligarDesligarRele(r3, a.substring(0,1));
-    ligarDesligarRele(r4, a.substring(1,2));
-    ligarDesligarRele(r5, a.substring(2,3));
-    ligarDesligarRele(r8, a.substring(3,4));
+    ligarDesligarRele(r4, a.substring(0,1));
   }
 }
 
