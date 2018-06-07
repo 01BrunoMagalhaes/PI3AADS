@@ -1,6 +1,10 @@
 RtcDS3231<TwoWire> Rtc(Wire);
 void  inicializarRtc(){
   Rtc.Begin();
+  if (!Rtc.IsDateTimeValid()){
+    Serial.println(F("Relógio desatualizado."));
+    Rtc.SetDateTime(RtcDateTime(__DATE__, __TIME__));
+  }
   if(!Rtc.GetIsRunning()){
     Rtc.SetIsRunning(true);
   }
