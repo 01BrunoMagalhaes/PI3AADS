@@ -41,3 +41,8 @@ String retornarHora(){
   RtcDateTime now = Rtc.GetDateTime();
   return String(formatarHora(now,"h:m:s"));
 }
+
+String retornarHoraSemSegundos(){
+  RtcDateTime now = Rtc.GetDateTime();
+  return String(formatarHora(now,"h:m"));
+}
