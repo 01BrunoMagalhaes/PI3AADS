@@ -11,7 +11,6 @@ void  inicializarRtc(){
   Rtc.Enable32kHzPin(false);
   Rtc.SetSquareWavePin(DS3231SquareWavePin_ModeNone);
 }
-   
 
 String formatarData(const RtcDateTime& dt, String format){
   String d = dt.Day() < 10 ? "0" + String(dt.Day()) : String(dt.Day()) ;
@@ -42,5 +41,3 @@ String retornarHora(){
   RtcDateTime now = Rtc.GetDateTime();
   return String(formatarHora(now,"h:m:s"));
 }
-
-

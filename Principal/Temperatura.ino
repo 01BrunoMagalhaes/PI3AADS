@@ -68,4 +68,3 @@ float temperaturaAtual(){
   
   return celsius; 
 }
-

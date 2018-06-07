@@ -1,6 +1,7 @@
 void inicializarReles(){
   pinMode(r1, OUTPUT); pinMode(r2, OUTPUT);
-  pinMode(r3, OUTPUT); pinMode(r4, OUTPUT);
+  pinMode(r3, OUTPUT); 
+  pinMode(r4, OUTPUT);
   //pinMode(r5, OUTPUT); 
   //pinMode(r6, OUTPUT);
   //pinMode(r7, OUTPUT); 
@@ -40,4 +41,3 @@ void verificaReles(String a){
     ligarDesligarRele(r4, a.substring(0,1));
   }
 }
-

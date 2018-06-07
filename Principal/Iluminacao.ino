@@ -5,4 +5,3 @@ void inicializarIluminacao(){
   analogWrite(p1, brilho);
   analogWrite(p2, brilho);
 }
-

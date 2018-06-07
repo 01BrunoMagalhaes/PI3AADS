@@ -30,5 +30,3 @@ void verificaNivelAgua(boolean on){
   }
   ligarDesligarRele(r3, 0);
 }
-
-

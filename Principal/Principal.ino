@@ -6,13 +6,13 @@
 #define r1 3 //Resfriamento
 #define r2 4 //Aquecedor
 #define r3 5 //Bomba nivel
-#define r4 6
+#define r4 8
 //#define r5 7 
-#define r6 8
-#define r7 9 
+//#define r6 8
+//#define r7 9 
 #define r8 13
 //PWM's
-#define p1 8 //canal cor azul 
+#define p1 6 //canal cor azul 
 #define p2 9 //canal cor branca
 #define t 2 //Temperatura
 #define bo 7 //boia
