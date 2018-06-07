@@ -1,12 +1,12 @@
 Receber um Json com todos status dos módulos:
 Código: 00
-URL: "ip/00"
+URL: "10.0.0.2/00"
 
 Json:
 "temperatura"
 ####################################################################
 Código: 01
-URL: "ip/01/????"
+URL: "10.0.0.2/01/????"
 Descrição: Modificar os reles.
 
 A interrogação deve ser substituida por 0 ou 1, onde 1 é para ligar e 0 para desligar.
@@ -14,7 +14,7 @@ Considerar também a posição, ela se refere ao número do rele; primeira posi�
 o relé 1. 
 ####################################################################
 Código: 02
-URL: "ip/02/27.1&28"
+URL: "10.0.0.2/02/27.1&28"
 Descrição: Modificar a temperatura minima e máxima, para consequentemente acionar o arrefecimento ou aquecimento.
 
 O primeiro parâmetro é a temperatura minima, no exemplo "27.1", e o segundo a temperatura máxima "28".
@@ -22,7 +22,7 @@ Obs.: -Sempre separar os dois parâmetros através do caractere "&".
       -Caso os dois parâmetros sejam "0", o controle de temperatura não será feito, e os relés correspondetes serão desligados.	
 ####################################################################
 Código: 03
-URL: "ip/03/?"
+URL: "10.0.0.2/03/?"
 Descrição: Ativar ou desativar o controle de nível de água.
 O controle de nível de água pode ligar o relé da bomba caso a bóia esteja ativa ou desligar o relé caso contrário.
 
