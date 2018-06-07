@@ -21,3 +21,11 @@ O primeiro parâmetro é a temperatura minima, no exemplo "27.1", e o segundo a 
 Obs.: -Sempre separar os dois parâmetros através do caractere "&". 
       -Caso os dois parâmetros sejam "0", o controle de temperatura não será feito, e os relés correspondetes serão desligados.	
 ####################################################################
+Código: 03
+URL: "ip/03/?"
+Descrição: Ativar ou desativar o controle de nível de água.
+O controle de nível de água pode ligar o relé da bomba caso a bóia esteja ativa ou desligar o relé caso contrário.
+
+A interrogação deve ser substituida por 0 ou 1, onde 1 é para ativar o controle e 0 para desativar.
+Obs.: -Por padrão o controle de nível do arduino fica desativado.	
+####################################################################
