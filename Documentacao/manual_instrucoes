@@ -26,4 +26,16 @@ IN? = ? digital arduino
 OUT = LED
 IN = FONTE
 ####################################################################
-
+Bóia de nível
+Fio 1 = 5v arduino
+Fio 2 = z
+x = 7 digital arduino
+b = pino 1 resistor
+a = pino 2 resistor
+n = GND arduino
+ 
+Obs.: Esquema de ligação:
+x..b..z
+.......
+n..a...
+####################################################################
