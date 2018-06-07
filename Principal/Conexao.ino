@@ -4,8 +4,8 @@
 
 //Definicoes de IP, mascara de rede e gateway
 byte mac[] = {0xDE, 0xAD, 0xBE, 0xEF, 0xFE, 0xED};
-IPAddress ip(192,168,15,11);          //Define o endereco IP
-IPAddress gateway(192,168,15,10);      //Define o gateway
+IPAddress ip(10,0,0,2);          //Define o endereco IP
+IPAddress gateway(10,0,0,1);      //Define o gateway
 IPAddress subnet(255, 255, 255, 0); //Define a máscara de rede
 
 String conteudo = "";
