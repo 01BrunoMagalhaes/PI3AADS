@@ -3,14 +3,14 @@
 #include <OneWire.h> //Temperatura
 
 //Relés
-#define r1 3 //Resfriamento
-#define r2 4 //Aquecedor
-#define r3 5 //Bomba nivel
-#define r4 8
-//#define r5 12 
-//#define r6 8
-//#define r7 9 
-//#define r8 13
+#define r1 22 //Resfriamento
+#define r2 23 //Aquecedor
+#define r3 24 //Bomba nivel
+#define r4 25
+#define r5 26 
+#define r6 27
+#define r7 28
+#define r8 29
 //PWM's
 #define p1 6 //canal cor azul 
 #define p2 9 //canal cor branca
@@ -22,13 +22,7 @@ float tMax = 0;
 boolean validarNivel = false;
 
 void setup() {
-  pinMode(53, OUTPUT); //Configuração para funcionar o módulo ethernet no Mega
-  inicializarBoia();
-  inicializarIluminacao();
-  inicializarReles();
-  inicializarEthernet();
-  inicializarRtc();
-
+  inicializarModulos();
   Serial.begin(9600);
 }
 
