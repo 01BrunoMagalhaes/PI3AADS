@@ -7,10 +7,10 @@
 #define r2 4 //Aquecedor
 #define r3 5 //Bomba nivel
 #define r4 8
-//#define r5 7 
+//#define r5 12 
 //#define r6 8
 //#define r7 9 
-#define r8 13
+//#define r8 13
 //PWM's
 #define p1 6 //canal cor azul 
 #define p2 9 //canal cor branca
@@ -22,12 +22,13 @@ float tMax = 0;
 boolean validarNivel = false;
 
 void setup() {
+  pinMode(53, OUTPUT); //Configuração para funcionar o módulo ethernet no Mega
   inicializarBoia();
   inicializarIluminacao();
   inicializarReles();
   inicializarEthernet();
   inicializarRtc();
-  
+
   Serial.begin(9600);
 }
 
