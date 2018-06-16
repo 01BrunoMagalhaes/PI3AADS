@@ -1,8 +1,8 @@
 Módulo RTC
 GND = GND arduino
 VCC = 5V arduino
-SDA = 4 analógica arduino
-SCL = A5 analógica arduino
+SDA = 4 analógica arduino ou SDA 20 MEGA
+SCL = A5 analógica arduino ou SCL 21 MEGA
 ####################################################################
 Sensor Temperatura
 PRETO = GND arduino
