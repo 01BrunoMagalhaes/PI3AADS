@@ -7,7 +7,7 @@ SCL = A5 analógica arduino ou SCL 21 MEGA
 Sensor Temperatura
 PRETO = GND arduino
 VERMELHO = 5v arduino
-AMARELO = 2 digital arduino
+AMARELO = 30 digital arduino
 
 Obs.:Pode ter conflito com a porta utilizando o módulo Ethernet
 ####################################################################
@@ -29,7 +29,7 @@ IN = FONTE
 Bóia de nível
 Fio 1 = 5v arduino
 Fio 2 = z
-x = 7 digital arduino
+x = 31 digital arduino
 b = pino 1 resistor
 a = pino 2 resistor
 n = GND arduino

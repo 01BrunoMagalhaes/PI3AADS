@@ -70,6 +70,11 @@ void verificaClients() {
               int f = conteudo.indexOf(" HTTP");
               verificaNivelAgua(conteudo.substring(i,f));
               client.println("HTTP/1.0 200 OK");
+            }else if(acao.equalsIgnoreCase("04/")){
+              int i = conteudo.indexOf("04/") +3;
+              int f = conteudo.indexOf(" HTTP");
+              testarIluminacao(conteudo.substring(i,f));
+              client.println("HTTP/1.0 200 OK");
             }else{
               client.println("HTTP/1.0 200 OK");
             }
