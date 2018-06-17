@@ -29,3 +29,13 @@ O controle de nível de água pode ligar o relé da bomba caso a bóia esteja at
 A interrogação deve ser substituida por 0 ou 1, onde 1 é para ativar o controle e 0 para desativar.
 Obs.: -Por padrão o controle de nível do arduino fica desativado.	
 ####################################################################
+Código: 04
+URL: "10.0.0.2/04/20&10"
+Descrição: Colocar a iluminação em modo manual.
+A iluminação em modo manual ativada manterá a iluminação ligada com valores fixos definidos pelo usuário, o usuário pode ativar ou desativar esse modo.
+
+O primeiro valor é referente a potência da iluminação do canal azul e o segundo se refere a potência do canal branco.
+A potência de cada canal vai de 0 até 100.
+Caso seja passado "0&0" o modo manual será desativado e a iluminação ficará no modo automático.
+Obs.: -Por padrão o modo manual de iluminação do arduino fica desativado.	
+####################################################################
