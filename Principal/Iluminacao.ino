@@ -61,6 +61,7 @@ void testarIluminacao(String a){
     }else{
       valoresTesteIluminacao = a;
       testeIluminacao = true;
+      iluminacaoAutomatica = false;
       analogWrite(canalAzul, map(a.substring(0, a.indexOf("&")).toFloat(), 0, 100, 0, 255));
       analogWrite(canalBranco, map(a.substring(a.indexOf("&")+1, a.length()).toFloat(), 0, 100, 0, 255));
     }
@@ -154,6 +155,7 @@ float tratarPotencia(String a){
 void verificaCanalAzul(){
   if(!c10.equalsIgnoreCase("") || !c11.equalsIgnoreCase("") || !c12.equalsIgnoreCase("") || !c13.equalsIgnoreCase("") || !c14.equalsIgnoreCase("")
       || !c15.equalsIgnoreCase("") || !c16.equalsIgnoreCase("") || !c17.equalsIgnoreCase("") || !c18.equalsIgnoreCase("") || !c19.equalsIgnoreCase("")){
+    iluminacaoAutomatica = true;
     if(retornarHoraSemSegundos().equalsIgnoreCase(c10)){
       int brilho = map(b10, 0, 100, 0, 255);
       analogWrite(canalAzul, brilho);
@@ -191,6 +193,7 @@ void verificaCanalAzul(){
 void verificaCanalBranco(){
   if(!c20.equalsIgnoreCase("") || !c21.equalsIgnoreCase("") || !c22.equalsIgnoreCase("") || !c23.equalsIgnoreCase("") || !c24.equalsIgnoreCase("")
       || !c25.equalsIgnoreCase("") || !c26.equalsIgnoreCase("") || !c27.equalsIgnoreCase("") || !c28.equalsIgnoreCase("") || !c29.equalsIgnoreCase("")){
+    iluminacaoAutomatica = true;
     if(retornarHoraSemSegundos().equalsIgnoreCase(c20)){
       int brilho = map(b20, 0, 100, 0, 255);
       analogWrite(canalBranco, brilho);
