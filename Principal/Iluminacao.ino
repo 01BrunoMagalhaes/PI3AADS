@@ -128,30 +128,6 @@ void programarCanalBranco2(String a){
   }
 }
 
-String tratarHora(String a){
-  if(!a.equalsIgnoreCase("")){
-    if(a.equalsIgnoreCase("0000")){
-      return "";
-    }else{
-      return String(a.substring(0,2) + ":" + a.substring(2,4));
-    }
-  }else{
-    return "";
-  }
-}
-
-float tratarPotencia(String a){
-  if(!a.equalsIgnoreCase("")){
-    if(a.equalsIgnoreCase("000")){
-      return 0;
-    }else{
-      return a.substring(0,3).toFloat();
-    }
-  }else{
-    return 0;
-  }
-}
-
 void verificaCanalAzul(){
   if(!c10.equalsIgnoreCase("") || !c11.equalsIgnoreCase("") || !c12.equalsIgnoreCase("") || !c13.equalsIgnoreCase("") || !c14.equalsIgnoreCase("")
       || !c15.equalsIgnoreCase("") || !c16.equalsIgnoreCase("") || !c17.equalsIgnoreCase("") || !c18.equalsIgnoreCase("") || !c19.equalsIgnoreCase("")){
