@@ -39,3 +39,57 @@ A potência de cada canal vai de 0 até 100.
 Caso seja passado "0&0" o modo manual será desativado e a iluminação ficará no modo automático.
 Obs.: -Por padrão o modo manual de iluminação do arduino fica desativado.	
 ####################################################################
+Código: 05
+URL: "10.0.0.2/05/08000200930040100006011000801230100"
+Descrição: Programar os 5 primeiros horários do canal azul e a respectiva potência.
+A iluminação funcionará automaticamente, colocando a potência informada no horário da mesma que o usuário informou.
+
+É formada por 35 digitos, onde de 7 em 7 digitos nós temos o horário + potencia. 
+Por exemplo:"0800020" será interpretado pelo arduino como 8 horas da manhã será acionada a potência de 20% do canal respectivo.
+A potência de cada canal vai de 0 até 100.
+Obs.: -Sempre lembrar de passar a potência em 3 digitos, exemplo 70% será "070".
+      -Por padrão o modo automático de iluminação do arduino fica desativado.	
+####################################################################
+Código: 06
+URL: "10.0.0.2/06/14001001530080173006018410402000020"
+Descrição: Programar os 5 últimos horários do canal azul e a respectiva potência.
+A iluminação funcionará automaticamente, colocando a potência informada no horário da mesma que o usuário informou.
+
+É formada por 35 digitos, onde de 7 em 7 digitos nós temos o horário + potencia. 
+Por exemplo:"0800020" será interpretado pelo arduino como 8 horas da manhã será acionada a potência de 20% do canal respectivo.
+A potência de cada canal vai de 0 até 100.
+Obs.: -Sempre lembrar de passar a potência em 3 digitos, exemplo 70% será "070".
+      -Por padrão o modo automático de iluminação do arduino fica desativado.	
+####################################################################
+Código: 07
+URL: "10.0.0.2/07/08000200930040100006011000801230100"
+Descrição: Programar os 5 primeiros horários do canal branco e a respectiva potência.
+A iluminação funcionará automaticamente, colocando a potência informada no horário da mesma que o usuário informou.
+
+É formada por 35 digitos, onde de 7 em 7 digitos nós temos o horário + potencia. 
+Por exemplo:"0800020" será interpretado pelo arduino como 8 horas da manhã será acionada a potência de 20% do canal respectivo.
+A potência de cada canal vai de 0 até 100.
+Obs.: -Sempre lembrar de passar a potência em 3 digitos, exemplo 70% será "070".
+      -Por padrão o modo automático de iluminação do arduino fica desativado.	
+####################################################################
+Código: 08
+URL: "10.0.0.2/08/14001001530080173006018410402000020"
+Descrição: Programar os 5 últimos horários do canal branco e a respectiva potência.
+A iluminação funcionará automaticamente, colocando a potência informada no horário da mesma que o usuário informou.
+
+É formada por 35 digitos, onde de 7 em 7 digitos nós temos o horário + potencia. 
+Por exemplo:"0800020" será interpretado pelo arduino como 8 horas da manhã será acionada a potência de 20% do canal respectivo.
+A potência de cada canal vai de 0 até 100.
+Obs.: -Sempre lembrar de passar a potência em 3 digitos, exemplo 70% será "070".
+      -Por padrão o modo automático de iluminação do arduino fica desativado.	
+####################################################################
+Código: 09
+URL: "10.0.0.2/09"
+Descrição: Irá executar uma simulação do dia da luminária, conforme potência informada pelo usuário nas integrações de 05 a 09.
+O arduino vai efetuar a simulação das 10 potências informadas dos canais Azul e Branco simultãneamente.
+Primeiramente vai apagar os 2 canais por 2 segundos; em seguida acionará as potências de 1 a 10 de cada canal (de maneira mútua), 
+ficando por 5 segundos em cada potência; após as 10 potências o arduino desliga os 2 canais por 2 segundos; após isso continuará 
+funcionando normalmente no modo automático, caso o mesmo esteja ativo.
+
+Obs.: -No tempo de execução da simulação o arduino ficará indisponível para comunicação.
+####################################################################
