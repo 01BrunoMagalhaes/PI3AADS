@@ -21,6 +21,7 @@
 float tMin = 0;
 float tMax = 0;
 boolean validarNivel = false;
+boolean iluminacaoAutomatica = false;
 boolean testeIluminacao = false;
 
 String valoresTesteIluminacao = "";
@@ -41,7 +42,7 @@ void loop() {
 
   verificaTemperatura(tMin, tMax);
   verificaNivelAgua(validarNivel);
-  verificaIluminacao(testeIluminacao);
+  verificaIluminacao();
   verificaClients();
   Serial.println(F("Final loop.")); Serial.println(F(""));
   delay(2000);

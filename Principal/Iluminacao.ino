@@ -2,35 +2,52 @@ void inicializarIluminacao(){
   pinMode(canalAzul, OUTPUT); pinMode(canalBranco, OUTPUT);
 }  
 
-void verificaIluminacao(boolean testeIluminacao){
-  if(!testeIluminacao){
+void verificaIluminacao(){
+  if(iluminacaoAutomatica){
     verificaCanalAzul();
     verificaCanalBranco();
-    Serial.println("Canal Azul");
-    Serial.print("'"+c10+"'"); Serial.println("'"+String(b10)+"'");
-    Serial.print("'"+c11+"'"); Serial.println("'"+String(b11)+"'");
-    Serial.print("'"+c12+"'"); Serial.println("'"+String(b12)+"'");
-    Serial.print("'"+c13+"'"); Serial.println("'"+String(b13)+"'");
-    Serial.print("'"+c14+"'"); Serial.println("'"+String(b14)+"'");
-    Serial.print("'"+c15+"'"); Serial.println("'"+String(b15)+"'");
-    Serial.print("'"+c16+"'"); Serial.println("'"+String(b16)+"'");
-    Serial.print("'"+c17+"'"); Serial.println("'"+String(b17)+"'");
-    Serial.print("'"+c18+"'"); Serial.println("'"+String(b18)+"'");
-    Serial.print("'"+c19+"'"); Serial.println("'"+String(b19)+"'");  
-    Serial.println("Canal Branco");
-    Serial.print("'"+c20+"'"); Serial.println("'"+String(b20)+"'");
-    Serial.print("'"+c21+"'"); Serial.println("'"+String(b21)+"'");
-    Serial.print("'"+c22+"'"); Serial.println("'"+String(b22)+"'");
-    Serial.print("'"+c23+"'"); Serial.println("'"+String(b23)+"'");
-    Serial.print("'"+c24+"'"); Serial.println("'"+String(b24)+"'");
-    Serial.print("'"+c25+"'"); Serial.println("'"+String(b25)+"'");
-    Serial.print("'"+c26+"'"); Serial.println("'"+String(b26)+"'");
-    Serial.print("'"+c27+"'"); Serial.println("'"+String(b27)+"'");
-    Serial.print("'"+c28+"'"); Serial.println("'"+String(b28)+"'");
-    Serial.print("'"+c29+"'"); Serial.println("'"+String(b29)+"'");  
-  }else{
+  }else if(testeIluminacao){
     testarIluminacao(valoresTesteIluminacao);
   }
+}
+
+void simularIluminacaoAutomatica(){
+  analogWrite(canalAzul, map(0, 0, 100, 0, 255));
+  analogWrite(canalBranco, map(0, 0, 100, 0, 255));
+  delay(2000);
+  analogWrite(canalAzul, map(b10, 0, 100, 0, 255));
+  analogWrite(canalBranco, map(b20, 0, 100, 0, 255));
+  delay(5000);
+  analogWrite(canalAzul, map(b11, 0, 100, 0, 255));
+  analogWrite(canalBranco, map(b21, 0, 100, 0, 255));
+  delay(5000);
+  analogWrite(canalAzul, map(b12, 0, 100, 0, 255));
+  analogWrite(canalBranco, map(b22, 0, 100, 0, 255));
+  delay(5000);
+  analogWrite(canalAzul, map(b13, 0, 100, 0, 255));
+  analogWrite(canalBranco, map(b23, 0, 100, 0, 255));
+  delay(5000);
+  analogWrite(canalAzul, map(b14, 0, 100, 0, 255));
+  analogWrite(canalBranco, map(b24, 0, 100, 0, 255));
+  delay(5000);
+  analogWrite(canalAzul, map(b15, 0, 100, 0, 255));
+  analogWrite(canalBranco, map(b25, 0, 100, 0, 255));
+  delay(5000);
+  analogWrite(canalAzul, map(b16, 0, 100, 0, 255));
+  analogWrite(canalBranco, map(b26, 0, 100, 0, 255));
+  delay(5000);
+  analogWrite(canalAzul, map(b17, 0, 100, 0, 255));
+  analogWrite(canalBranco, map(b27, 0, 100, 0, 255));
+  delay(5000);
+  analogWrite(canalAzul, map(b18, 0, 100, 0, 255));
+  analogWrite(canalBranco, map(b28, 0, 100, 0, 255));
+  delay(5000);
+  analogWrite(canalAzul, map(b19, 0, 100, 0, 255));
+  analogWrite(canalBranco, map(b29, 0, 100, 0, 255));
+  delay(5000);
+  analogWrite(canalAzul, map(0, 0, 100, 0, 255));
+  analogWrite(canalBranco, map(0, 0, 100, 0, 255));
+  delay(2000);
 }
 
 void testarIluminacao(String a){
@@ -38,6 +55,7 @@ void testarIluminacao(String a){
     if(a.equalsIgnoreCase("0&0")){
       valoresTesteIluminacao = "";
       testeIluminacao = false;
+      iluminacaoAutomatica = true;
       analogWrite(canalAzul, map(0, 0, 100, 0, 255));
       analogWrite(canalBranco, map(0, 0, 100, 0, 255));
     }else{

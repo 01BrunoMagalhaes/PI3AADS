@@ -95,6 +95,9 @@ void verificaClients() {
               int f = conteudo.indexOf(" HTTP");
               programarCanalBranco2(conteudo.substring(i,f));
               client.println("HTTP/1.0 200 OK");
+            }else if(acao.equalsIgnoreCase("09 ")){
+              simularIluminacaoAutomatica();
+              client.println("HTTP/1.0 200 OK");
             }else{
               client.println("HTTP/1.0 200 OK");
             }
