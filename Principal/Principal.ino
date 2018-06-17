@@ -21,7 +21,9 @@
 float tMin = 0;
 float tMax = 0;
 boolean validarNivel = false;
+boolean testeIluminacao = false;
 
+String valoresTesteIluminacao = "";
 String c10 = "", c11 = "", c12 = "", c13 = "", c14 = "", c15 = "", c16 = "", c17 = "", c18 = "", c19 = "";//horarios da iluminacao azul 
 float b10 = 0, b11 = 0, b12 = 0, b13 = 0, b14 = 0, b15 = 0, b16 = 0, b17 = 0, b18 = 0, b19 = 0;//potencias da iluminacao azul
 String c20 = "", c21 = "", c22 = "", c23 = "", c24 = "", c25 = "", c26 = "", c27 = "", c28 = "", c29 = "";//horarios da iluminacao branca
@@ -39,7 +41,7 @@ void loop() {
 
   verificaTemperatura(tMin, tMax);
   verificaNivelAgua(validarNivel);
-  verificaIluminacao();
+  verificaIluminacao(testeIluminacao);
   verificaClients();
   Serial.println(F("Final loop.")); Serial.println(F(""));
   delay(2000);

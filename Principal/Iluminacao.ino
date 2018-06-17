@@ -2,15 +2,28 @@ void inicializarIluminacao(){
   pinMode(canalAzul, OUTPUT); pinMode(canalBranco, OUTPUT);
 }  
 
-void verificaIluminacao(){
-  verificaCanalAzul();
-  verificaCanalBranco();
+void verificaIluminacao(boolean testeIluminacao){
+  if(!testeIluminacao){
+    verificaCanalAzul();
+    verificaCanalBranco();
+  }else{
+    testarIluminacao(valoresTesteIluminacao);
+  }
 }
 
 void testarIluminacao(String a){
   if(!a.equalsIgnoreCase("")){
-    analogWrite(canalAzul, map(a.substring(0, a.indexOf("&")).toFloat(), 0, 100, 0, 255));
-    analogWrite(canalBranco, map(a.substring(a.indexOf("&")+1, a.length()).toFloat(), 0, 100, 0, 255));
+    if(a.equalsIgnoreCase("0&0")){
+      valoresTesteIluminacao = "";
+      testeIluminacao = false;
+      analogWrite(canalAzul, map(0, 0, 100, 0, 255));
+      analogWrite(canalBranco, map(0, 0, 100, 0, 255));
+    }else{
+      valoresTesteIluminacao = a;
+      testeIluminacao = true;
+      analogWrite(canalAzul, map(a.substring(0, a.indexOf("&")).toFloat(), 0, 100, 0, 255));
+      analogWrite(canalBranco, map(a.substring(a.indexOf("&")+1, a.length()).toFloat(), 0, 100, 0, 255));
+    }
   }
 }
 
