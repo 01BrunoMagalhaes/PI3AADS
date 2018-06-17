@@ -27,6 +27,32 @@ void testarIluminacao(String a){
   }
 }
 
+void programarCanalAzul1(String a){
+  if(!a.equalsIgnoreCase("")){
+    Serial.print("Valor canal azul1 = "); Serial.println(a);
+    c10 = tratarHora(a.substring(0,4));
+    Serial.print("Valor c10 = "); Serial.println("'"+c10+"'");
+  }
+}
+
+void programarCanalAzul2(String a){
+  if(!a.equalsIgnoreCase("")){
+    Serial.print("Valor canal azul2 = "); Serial.println(a);
+  }
+}
+
+String tratarHora(String a){
+  if(!a.equalsIgnoreCase("")){
+    if(a.equalsIgnoreCase("0000")){
+      return "";
+    }else{
+      return String(a.substring(0,2) + ":" + a.substring(2,4));
+    }
+  }else{
+    return "";
+  }
+}
+
 void verificaCanalAzul(){
   if(!c10.equalsIgnoreCase("") || !c11.equalsIgnoreCase("") || !c12.equalsIgnoreCase("") || !c13.equalsIgnoreCase("") || !c14.equalsIgnoreCase("")
       || !c15.equalsIgnoreCase("") || !c16.equalsIgnoreCase("") || !c17.equalsIgnoreCase("") || !c18.equalsIgnoreCase("") || !c19.equalsIgnoreCase("")){
