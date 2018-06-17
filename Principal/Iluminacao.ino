@@ -6,6 +6,28 @@ void verificaIluminacao(boolean testeIluminacao){
   if(!testeIluminacao){
     verificaCanalAzul();
     verificaCanalBranco();
+    Serial.println("Canal Azul");
+    Serial.print("'"+c10+"'"); Serial.println("'"+String(b10)+"'");
+    Serial.print("'"+c11+"'"); Serial.println("'"+String(b11)+"'");
+    Serial.print("'"+c12+"'"); Serial.println("'"+String(b12)+"'");
+    Serial.print("'"+c13+"'"); Serial.println("'"+String(b13)+"'");
+    Serial.print("'"+c14+"'"); Serial.println("'"+String(b14)+"'");
+    Serial.print("'"+c15+"'"); Serial.println("'"+String(b15)+"'");
+    Serial.print("'"+c16+"'"); Serial.println("'"+String(b16)+"'");
+    Serial.print("'"+c17+"'"); Serial.println("'"+String(b17)+"'");
+    Serial.print("'"+c18+"'"); Serial.println("'"+String(b18)+"'");
+    Serial.print("'"+c19+"'"); Serial.println("'"+String(b19)+"'");  
+    Serial.println("Canal Branco");
+    Serial.print("'"+c20+"'"); Serial.println("'"+String(b20)+"'");
+    Serial.print("'"+c21+"'"); Serial.println("'"+String(b21)+"'");
+    Serial.print("'"+c22+"'"); Serial.println("'"+String(b22)+"'");
+    Serial.print("'"+c23+"'"); Serial.println("'"+String(b23)+"'");
+    Serial.print("'"+c24+"'"); Serial.println("'"+String(b24)+"'");
+    Serial.print("'"+c25+"'"); Serial.println("'"+String(b25)+"'");
+    Serial.print("'"+c26+"'"); Serial.println("'"+String(b26)+"'");
+    Serial.print("'"+c27+"'"); Serial.println("'"+String(b27)+"'");
+    Serial.print("'"+c28+"'"); Serial.println("'"+String(b28)+"'");
+    Serial.print("'"+c29+"'"); Serial.println("'"+String(b29)+"'");  
   }else{
     testarIluminacao(valoresTesteIluminacao);
   }
@@ -29,15 +51,61 @@ void testarIluminacao(String a){
 
 void programarCanalAzul1(String a){
   if(!a.equalsIgnoreCase("")){
-    Serial.print("Valor canal azul1 = "); Serial.println(a);
     c10 = tratarHora(a.substring(0,4));
-    Serial.print("Valor c10 = "); Serial.println("'"+c10+"'");
+    b10 = tratarPotencia(a.substring(4,7));
+    c11 = tratarHora(a.substring(7,11));
+    b11 = tratarPotencia(a.substring(11,14));
+    c12 = tratarHora(a.substring(14,18));
+    b12 = tratarPotencia(a.substring(18,21));
+    c13 = tratarHora(a.substring(21,25));
+    b13 = tratarPotencia(a.substring(25,28));
+    c14 = tratarHora(a.substring(28,32));
+    b14 = tratarPotencia(a.substring(32,35));
   }
 }
 
 void programarCanalAzul2(String a){
   if(!a.equalsIgnoreCase("")){
-    Serial.print("Valor canal azul2 = "); Serial.println(a);
+    c15 = tratarHora(a.substring(0,4));
+    b15 = tratarPotencia(a.substring(4,7));
+    c16 = tratarHora(a.substring(7,11));
+    b16 = tratarPotencia(a.substring(11,14));
+    c17 = tratarHora(a.substring(14,18));
+    b17 = tratarPotencia(a.substring(18,21));
+    c18 = tratarHora(a.substring(21,25));
+    b18 = tratarPotencia(a.substring(25,28));
+    c19 = tratarHora(a.substring(28,32));
+    b19 = tratarPotencia(a.substring(32,35));
+  }
+}
+
+void programarCanalBranco1(String a){
+  if(!a.equalsIgnoreCase("")){
+    c20 = tratarHora(a.substring(0,4));
+    b20 = tratarPotencia(a.substring(4,7));
+    c21 = tratarHora(a.substring(7,11));
+    b21 = tratarPotencia(a.substring(11,14));
+    c22 = tratarHora(a.substring(14,18));
+    b22 = tratarPotencia(a.substring(18,21));
+    c23 = tratarHora(a.substring(21,25));
+    b23 = tratarPotencia(a.substring(25,28));
+    c24 = tratarHora(a.substring(28,32));
+    b24 = tratarPotencia(a.substring(32,35));
+  }
+}
+
+void programarCanalBranco2(String a){
+  if(!a.equalsIgnoreCase("")){
+    c25 = tratarHora(a.substring(0,4));
+    b25 = tratarPotencia(a.substring(4,7));
+    c26 = tratarHora(a.substring(7,11));
+    b26 = tratarPotencia(a.substring(11,14));
+    c27 = tratarHora(a.substring(14,18));
+    b27 = tratarPotencia(a.substring(18,21));
+    c28 = tratarHora(a.substring(21,25));
+    b28 = tratarPotencia(a.substring(25,28));
+    c29 = tratarHora(a.substring(28,32));
+    b29 = tratarPotencia(a.substring(32,35));
   }
 }
 
@@ -50,6 +118,18 @@ String tratarHora(String a){
     }
   }else{
     return "";
+  }
+}
+
+float tratarPotencia(String a){
+  if(!a.equalsIgnoreCase("")){
+    if(a.equalsIgnoreCase("000")){
+      return 0;
+    }else{
+      return a.substring(0,3).toFloat();
+    }
+  }else{
+    return 0;
   }
 }
 

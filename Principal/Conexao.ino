@@ -85,6 +85,16 @@ void verificaClients() {
               int f = conteudo.indexOf(" HTTP");
               programarCanalAzul2(conteudo.substring(i,f));
               client.println("HTTP/1.0 200 OK");
+            }else if(acao.equalsIgnoreCase("07/")){
+              int i = conteudo.indexOf("07/") +3;
+              int f = conteudo.indexOf(" HTTP");
+              programarCanalBranco1(conteudo.substring(i,f));
+              client.println("HTTP/1.0 200 OK");
+            }else if(acao.equalsIgnoreCase("08/")){
+              int i = conteudo.indexOf("08/") +3;
+              int f = conteudo.indexOf(" HTTP");
+              programarCanalBranco2(conteudo.substring(i,f));
+              client.println("HTTP/1.0 200 OK");
             }else{
               client.println("HTTP/1.0 200 OK");
             }
