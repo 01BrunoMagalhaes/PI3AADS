@@ -52,8 +52,12 @@ void verificaClients() {
               temp["atual"] = temperaturaAtual();
               temp["minima"] = tMin;
               temp["maxima"] = tMax;
-              //temp["minima"] = tMin;
-              //temp["maxima"] = tMax;
+              JsonObject& reles = root.createNestedObject("tomadas");
+              reles["1"] = statusRele(r4);
+              reles["2"] = statusRele(r5);
+              reles["3"] = statusRele(r6);
+              reles["4"] = statusRele(r7);
+              reles["5"] = statusRele(r8);
               //JsonArray& data = root.createNestedArray("data"); data.add(retornarData());
               //JsonArray& hora = root.createNestedArray("hora"); hora.add(retornarHora());
               //JsonArray& reles = root.createNestedArray("tomadas"); 
