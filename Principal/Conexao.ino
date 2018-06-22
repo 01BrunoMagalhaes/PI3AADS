@@ -64,6 +64,10 @@ void verificaClients() {
               controls["nivel"] = retornaStatusBoia();
               controls["temperatura"] = retornaStatusTemperatura();
 
+              JsonObject& data = root.createNestedObject("dateTime");
+              data["data"] = retornarData();
+              data["hora"] = retornarHora();
+
               client.println("HTTP/1.0 200 OK"); client.println("Content-Type: application/json"); client.println("Connection: close"); client.println("charset: utf-8");
               //client.println("Refresh: 5"); 
               client.println(); root.prettyPrintTo(client);  
