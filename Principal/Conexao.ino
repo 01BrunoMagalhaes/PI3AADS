@@ -19,7 +19,7 @@ void  inicializarEthernet(){
 }
 
 void verificaClients() {
-  
+  Serial.println(Ethernet.localIP());
   EthernetClient client = server.available(); //Aguarda conexao do browser
 
   if (client) {
@@ -45,7 +45,15 @@ void verificaClients() {
           if(!acao.equalsIgnoreCase("")){
             if(acao.equalsIgnoreCase("00 ")){
               StaticJsonBuffer<500> jsonBuffer; JsonObject& root = jsonBuffer.createObject(); 
-              JsonArray& valorTemperatura = root.createNestedArray("temperatura"); valorTemperatura.add(temperaturaAtual()); 
+              //JsonArray& valorTemperatura = root.createNestedArray("temperatura"); 
+              //root.createNestedArray("temperatura");
+              //valorTemperatura.add(temperaturaAtual()); 
+              JsonObject& temp = root.createNestedObject("temperatura");
+              temp["atual"] = temperaturaAtual();
+              temp["minima"] = tMin;
+              temp["maxima"] = tMax;
+              //temp["minima"] = tMin;
+              //temp["maxima"] = tMax;
               //JsonArray& data = root.createNestedArray("data"); data.add(retornarData());
               //JsonArray& hora = root.createNestedArray("hora"); hora.add(retornarHora());
               //JsonArray& reles = root.createNestedArray("tomadas"); 
