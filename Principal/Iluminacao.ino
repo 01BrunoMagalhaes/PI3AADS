@@ -50,6 +50,14 @@ void simularIluminacaoAutomatica(){
   delay(2000);
 }
 
+String retornaStatusIluminacao(){
+  if(iluminacaoAutomatica){
+    return "Ativo";
+  }else{
+    return "Desativado";
+  }
+}
+
 void testarIluminacao(String a){
   if(!a.equalsIgnoreCase("")){
     if(a.equalsIgnoreCase("0&0")){

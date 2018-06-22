@@ -63,6 +63,7 @@ void verificaClients() {
               JsonObject& controls = root.createNestedObject("controles");
               controls["nivel"] = retornaStatusBoia();
               controls["temperatura"] = retornaStatusTemperatura();
+              controls["iluminacao"] = retornaStatusIluminacao();
 
               JsonObject& data = root.createNestedObject("dateTime");
               data["data"] = retornarData();
