@@ -52,17 +52,18 @@ void verificaClients() {
               temp["atual"] = temperaturaAtual();
               temp["minima"] = tMin;
               temp["maxima"] = tMax;
+              
               JsonObject& reles = root.createNestedObject("tomadas");
-              reles["1"] = statusRele(r4);
-              reles["2"] = statusRele(r5);
-              reles["3"] = statusRele(r6);
-              reles["4"] = statusRele(r7);
-              reles["5"] = statusRele(r8);
-              //JsonArray& data = root.createNestedArray("data"); data.add(retornarData());
-              //JsonArray& hora = root.createNestedArray("hora"); hora.add(retornarHora());
-              //JsonArray& reles = root.createNestedArray("tomadas"); 
-              //reles.add(statusRele(r1)); reles.add(statusRele(r2)); reles.add(statusRele(r3)); reles.add(statusRele(r4)); 
-              //reles.add(statusRele(r5)); reles.add(statusRele(r6)); reles.add(statusRele(r7)); reles.add(statusRele(r8));
+              reles["t1"] = statusRele(r4);
+              reles["t2"] = statusRele(r5);
+              reles["t3"] = statusRele(r6);
+              reles["t4"] = statusRele(r7);
+              reles["t5"] = statusRele(r8);
+              
+              JsonObject& controls = root.createNestedObject("controles");
+              controls["nivel"] = retornaStatusBoia();
+              controls["temperatura"] = retornaStatusTemperatura();
+
               client.println("HTTP/1.0 200 OK"); client.println("Content-Type: application/json"); client.println("Connection: close"); client.println("charset: utf-8");
               //client.println("Refresh: 5"); 
               client.println(); root.prettyPrintTo(client);  

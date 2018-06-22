@@ -7,11 +7,21 @@ void verificaAquecerResfriar(String a){
   }
 }
 
+String retornaStatusTemperatura(){
+  if(validarTemperatura){
+    return "Ativo";
+  }else{
+    return "Desativado";
+  }
+}
+
 void verificaTemperatura(float baixa, float alta){
   if(baixa == 0 && alta == 0){
+    validarTemperatura = false;
     ligarDesligarRele(r1, 0);
     ligarDesligarRele(r2, 0);
   }else{
+    validarTemperatura = true;
     if(temperaturaAtual() >= alta){
       Serial.println(F("Ligando resfriamento."));
       ligarDesligarRele(r1, 1);

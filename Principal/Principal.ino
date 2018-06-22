@@ -21,6 +21,7 @@
 float tMin = 0;
 float tMax = 0;
 boolean validarNivel = false;
+boolean validarTemperatura = false;
 boolean iluminacaoAutomatica = false;
 boolean testeIluminacao = false;
 

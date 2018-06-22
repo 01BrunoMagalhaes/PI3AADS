@@ -22,6 +22,14 @@ void verificaNivelAgua(String a){
   }
 }  
 
+String retornaStatusBoia(){
+  if(validarNivel){
+    return "Ativo";
+  }else{
+    return "Desativado";
+  }
+}
+
 void verificaNivelAgua(boolean on){
   if(on){
     while(isBoiaAcionada()){
