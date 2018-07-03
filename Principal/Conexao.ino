@@ -45,29 +45,38 @@ void verificaClients() {
           if(!acao.equalsIgnoreCase("")){
             if(acao.equalsIgnoreCase("00 ")){
               StaticJsonBuffer<500> jsonBuffer; JsonObject& root = jsonBuffer.createObject(); 
-              //JsonArray& valorTemperatura = root.createNestedArray("temperatura"); 
-              //root.createNestedArray("temperatura");
-              //valorTemperatura.add(temperaturaAtual()); 
-              JsonObject& temp = root.createNestedObject("temperatura");
-              temp["atual"] = temperaturaAtual();
-              temp["minima"] = tMin;
-              temp["maxima"] = tMax;
+              JsonArray& aquarioArray = root.createNestedArray("aquario");
+              JsonObject& aquarioObject = jsonBuffer.createObject();
+              aquarioArray.add(aquarioObject);
               
-              JsonObject& reles = root.createNestedObject("tomadas");
-              reles["t1"] = statusRele(r4);
-              reles["t2"] = statusRele(r5);
-              reles["t3"] = statusRele(r6);
-              reles["t4"] = statusRele(r7);
-              reles["t5"] = statusRele(r8);
-              
-              JsonObject& controls = root.createNestedObject("controles");
-              controls["nivel"] = retornaStatusBoia();
-              controls["temperatura"] = retornaStatusTemperatura();
-              controls["iluminacao"] = retornaStatusIluminacao();
+              JsonArray& tempArray = aquarioObject.createNestedArray("temperatura");
+              JsonObject& tempObject = jsonBuffer.createObject();
+              tempArray.add(tempObject);
+              tempObject["atual"] = temperaturaAtual();
+              tempObject["minima"] = tMin;
+              tempObject["maxima"] = tMax;
 
-              JsonObject& data = root.createNestedObject("dateTime");
-              data["data"] = retornarData();
-              data["hora"] = retornarHora();
+              JsonArray& relesArray = aquarioObject.createNestedArray("tomadas");
+              JsonObject& relesObject = jsonBuffer.createObject();
+              relesArray.add(relesObject);
+              relesObject["t1"] = statusRele(r4);
+              relesObject["t2"] = statusRele(r5);
+              relesObject["t3"] = statusRele(r6);
+              relesObject["t4"] = statusRele(r7);
+              relesObject["t5"] = statusRele(r8);
+
+              JsonArray& controlsArray = aquarioObject.createNestedArray("controles");
+              JsonObject& controlsObject = jsonBuffer.createObject();
+              controlsArray.add(controlsObject);
+              controlsObject["nivel"] = retornaStatusBoia();
+              controlsObject["temperatura"] = retornaStatusTemperatura();
+              controlsObject["iluminacao"] = retornaStatusIluminacao();
+
+              JsonArray& dataArray = aquarioObject.createNestedArray("dateTime");
+              JsonObject& dataObject = jsonBuffer.createObject();
+              dataArray.add(dataObject);
+              dataObject["data"] = retornarData();
+              dataObject["hora"] = retornarHora();
 
               client.println("HTTP/1.0 200 OK"); client.println("Content-Type: application/json"); client.println("Connection: close"); client.println("charset: utf-8");
               //client.println("Refresh: 5"); 
