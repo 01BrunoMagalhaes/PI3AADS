@@ -2,8 +2,12 @@ OneWire  sensorTemp(t);
 
 void verificaAquecerResfriar(String a){
   if(!a.equalsIgnoreCase("")){
+    Serial.print("Completa: ");Serial.println(a);
     tMin = a.substring(0, a.indexOf("&")).toFloat();
-    tMax = a.substring(a.indexOf("&")+1, a.length()).toFloat();
+    a.replace(a.substring(0, a.indexOf("&")) + "&", "");
+    tMax = a.substring(0, a.indexOf("&")).toFloat();
+    a.replace(a.substring(0, a.indexOf("&")) + "&", "");
+    tIdeal = a.substring(0, a.length()).toFloat();
   }
 }
 

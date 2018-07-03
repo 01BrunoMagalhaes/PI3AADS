@@ -20,6 +20,7 @@
 
 float tMin = 0;
 float tMax = 0;
+float tIdeal = 0;
 boolean validarNivel = false;
 boolean validarTemperatura = false;
 boolean iluminacaoAutomatica = false;

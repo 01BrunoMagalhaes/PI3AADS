@@ -53,6 +53,7 @@ void verificaClients() {
               JsonObject& tempObject = jsonBuffer.createObject();
               tempArray.add(tempObject);
               tempObject["atual"] = temperaturaAtual();
+              tempObject["ideal"] = tIdeal;
               tempObject["minima"] = tMin;
               tempObject["maxima"] = tMax;
 
