@@ -80,6 +80,12 @@ void verificaClients() {
               dataObject["data"] = retornarData();
               dataObject["hora"] = retornarHora();
 
+              JsonArray& pAtualArray = aquarioObject.createNestedArray("potenciaAtual");
+              JsonObject& pAtualObject = jsonBuffer.createObject();
+              pAtualArray.add(pAtualObject);
+              pAtualObject["azul"] = potenciaAzulAtual;
+              pAtualObject["branco"] = potenciaBrancaAtual;
+              
               JsonArray& potenciaAzulArray = aquarioObject.createNestedArray("potenciaAzul");
               JsonObject& potenciaAzulObject = jsonBuffer.createObject();
               potenciaAzulArray.add(potenciaAzulObject);

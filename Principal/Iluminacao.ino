@@ -64,12 +64,16 @@ void testarIluminacao(String a){
       valoresTesteIluminacao = "";
       testeIluminacao = false;
       iluminacaoAutomatica = true;
+      potenciaAzulAtual = 0;
+      potenciaBrancaAtual = 0;
       analogWrite(canalAzul, map(0, 0, 100, 0, 255));
       analogWrite(canalBranco, map(0, 0, 100, 0, 255));
     }else{
       valoresTesteIluminacao = a;
       testeIluminacao = true;
       iluminacaoAutomatica = false;
+      potenciaAzulAtual = a.substring(0, a.indexOf("&")).toFloat();
+      potenciaBrancaAtual = a.substring(a.indexOf("&")+1, a.length()).toFloat();
       analogWrite(canalAzul, map(a.substring(0, a.indexOf("&")).toFloat(), 0, 100, 0, 255));
       analogWrite(canalBranco, map(a.substring(a.indexOf("&")+1, a.length()).toFloat(), 0, 100, 0, 255));
     }
@@ -136,40 +140,59 @@ void programarCanalBranco2(String a){
   }
 }
 
+int retornaHoraInteira(String hora){
+  if(!hora.equalsIgnoreCase("")){
+    hora.replace(":", "");
+    return hora.toInt();
+  }else{
+    return 0;     
+  }
+}
+
 void verificaCanalAzul(){
   if(!c10.equalsIgnoreCase("") || !c11.equalsIgnoreCase("") || !c12.equalsIgnoreCase("") || !c13.equalsIgnoreCase("") || !c14.equalsIgnoreCase("")
       || !c15.equalsIgnoreCase("") || !c16.equalsIgnoreCase("") || !c17.equalsIgnoreCase("") || !c18.equalsIgnoreCase("") || !c19.equalsIgnoreCase("")){
     iluminacaoAutomatica = true;
-    if(retornarHoraSemSegundos().equalsIgnoreCase(c10)){
+    if(retornaHoraInteira(c10) >= retornaHoraInteira(retornarHoraSemSegundos()) && retornaHoraInteira(retornarHoraSemSegundos()) < retornaHoraInteira(c11)){
       int brilho = map(b10, 0, 100, 0, 255);
       analogWrite(canalAzul, brilho);
+      potenciaAzulAtual = b10;
     }else if(retornarHoraSemSegundos().equalsIgnoreCase(c11)){
       int brilho = map(b11, 0, 100, 0, 255);
       analogWrite(canalAzul, brilho);
+      potenciaAzulAtual = b11;
     }else if(retornarHoraSemSegundos().equalsIgnoreCase(c12)){
       int brilho = map(b12, 0, 100, 0, 255);
       analogWrite(canalAzul, brilho);
+      potenciaAzulAtual = b12;
     }else if(retornarHoraSemSegundos().equalsIgnoreCase(c13)){
       int brilho = map(b13, 0, 100, 0, 255);
       analogWrite(canalAzul, brilho);
+      potenciaAzulAtual = b13;
     }else if(retornarHoraSemSegundos().equalsIgnoreCase(c14)){
       int brilho = map(b14, 0, 100, 0, 255);
       analogWrite(canalAzul, brilho);
+      potenciaAzulAtual = b14;
     }else if(retornarHoraSemSegundos().equalsIgnoreCase(c15)){
       int brilho = map(b15, 0, 100, 0, 255);
       analogWrite(canalAzul, brilho);
+      potenciaAzulAtual = b15;
     }else if(retornarHoraSemSegundos().equalsIgnoreCase(c16)){
       int brilho = map(b16, 0, 100, 0, 255);
       analogWrite(canalAzul, brilho);
+      potenciaAzulAtual = b16;
     }else if(retornarHoraSemSegundos().equalsIgnoreCase(c17)){
       int brilho = map(b17, 0, 100, 0, 255);
       analogWrite(canalAzul, brilho);
+      potenciaAzulAtual = b17;
     }else if(retornarHoraSemSegundos().equalsIgnoreCase(c18)){
       int brilho = map(b18, 0, 100, 0, 255);
       analogWrite(canalAzul, brilho);
+      potenciaAzulAtual = b18;
     }else if(retornarHoraSemSegundos().equalsIgnoreCase(c19)){
       int brilho = map(b19, 0, 100, 0, 255);
       analogWrite(canalAzul, brilho);
+      potenciaAzulAtual = b19;
     }
   }
 }
@@ -181,33 +204,43 @@ void verificaCanalBranco(){
     if(retornarHoraSemSegundos().equalsIgnoreCase(c20)){
       int brilho = map(b20, 0, 100, 0, 255);
       analogWrite(canalBranco, brilho);
+      potenciaBrancaAtual = b20;
     }else if(retornarHoraSemSegundos().equalsIgnoreCase(c21)){
       int brilho = map(b21, 0, 100, 0, 255);
       analogWrite(canalBranco, brilho);
+      potenciaBrancaAtual = b21;
     }else if(retornarHoraSemSegundos().equalsIgnoreCase(c22)){
       int brilho = map(b22, 0, 100, 0, 255);
       analogWrite(canalBranco, brilho);
+      potenciaBrancaAtual = b22;
     }else if(retornarHoraSemSegundos().equalsIgnoreCase(c23)){
       int brilho = map(b23, 0, 100, 0, 255);
       analogWrite(canalBranco, brilho);
+      potenciaBrancaAtual = b23;
     }else if(retornarHoraSemSegundos().equalsIgnoreCase(c24)){
       int brilho = map(b24, 0, 100, 0, 255);
       analogWrite(canalBranco, brilho);
+      potenciaBrancaAtual = b24;
     }else if(retornarHoraSemSegundos().equalsIgnoreCase(c25)){
       int brilho = map(b25, 0, 100, 0, 255);
       analogWrite(canalBranco, brilho);
+      potenciaBrancaAtual = b25;
     }else if(retornarHoraSemSegundos().equalsIgnoreCase(c26)){
       int brilho = map(b26, 0, 100, 0, 255);
       analogWrite(canalBranco, brilho);
+      potenciaBrancaAtual = b26;
     }else if(retornarHoraSemSegundos().equalsIgnoreCase(c27)){
       int brilho = map(b27, 0, 100, 0, 255);
       analogWrite(canalBranco, brilho);
+      potenciaBrancaAtual = b27;
     }else if(retornarHoraSemSegundos().equalsIgnoreCase(c28)){
       int brilho = map(b28, 0, 100, 0, 255);
       analogWrite(canalBranco, brilho);
+      potenciaBrancaAtual = b28;
     }else if(retornarHoraSemSegundos().equalsIgnoreCase(c29)){
       int brilho = map(b29, 0, 100, 0, 255);
       analogWrite(canalBranco, brilho);
+      potenciaBrancaAtual = b29;
     }
   }
 }
