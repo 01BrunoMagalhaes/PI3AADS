@@ -32,6 +32,9 @@ String retornaStatusBoia(){
 
 void verificaNivelAgua(boolean on){
   if(on){
+    if(isBoiaAcionada()){
+      qtdReposicoes++;
+    }
     while(isBoiaAcionada()){
       ligarDesligarRele(r3, 1);
     }

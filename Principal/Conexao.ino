@@ -70,6 +70,7 @@ void verificaClients() {
               JsonObject& controlsObject = jsonBuffer.createObject();
               controlsArray.add(controlsObject);
               controlsObject["nivel"] = retornaStatusBoia();
+              controlsObject["qtdReposicoes"] = qtdReposicoes;
               controlsObject["temperatura"] = retornaStatusTemperatura();
               controlsObject["iluminacao"] = retornaStatusIluminacao();
 

@@ -18,6 +18,7 @@
 #define t 30 //Temperatura
 #define bo 31 //boia
 
+int qtdReposicoes = 0;
 float tMin = 0;
 float tMax = 0;
 float tIdeal = 0;
