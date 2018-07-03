@@ -17,6 +17,7 @@ void verificaNivelAgua(String a){
     if(a.substring(0,1).equalsIgnoreCase("1")){
       validarNivel = true;
     }else{
+      qtdReposicoes = 0;
       validarNivel = false;
     }
   }
@@ -33,7 +34,7 @@ String retornaStatusBoia(){
 void verificaNivelAgua(boolean on){
   if(on){
     if(isBoiaAcionada()){
-      qtdReposicoes++;
+      qtdReposicoes ++;
     }
     while(isBoiaAcionada()){
       ligarDesligarRele(r3, 1);
