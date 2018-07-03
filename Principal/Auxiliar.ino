@@ -7,6 +7,15 @@ void inicializarModulos(){
   inicializarRtc();
 }
 
+int retornaHoraInteira(String hora){
+  if(!hora.equalsIgnoreCase("")){
+    hora.replace(":", "");
+    return hora.toInt();
+  }else{
+    return 0;     
+  }
+}
+
 String tratarHora(String a){
   if(!a.equalsIgnoreCase("")){
     if(a.equalsIgnoreCase("0000")){

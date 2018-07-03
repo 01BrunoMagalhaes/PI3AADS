@@ -140,15 +140,6 @@ void programarCanalBranco2(String a){
   }
 }
 
-int retornaHoraInteira(String hora){
-  if(!hora.equalsIgnoreCase("")){
-    hora.replace(":", "");
-    return hora.toInt();
-  }else{
-    return 0;     
-  }
-}
-
 void verificaCanalAzul(){
   if(!c10.equalsIgnoreCase("") || !c11.equalsIgnoreCase("") || !c12.equalsIgnoreCase("") || !c13.equalsIgnoreCase("") || !c14.equalsIgnoreCase("")
       || !c15.equalsIgnoreCase("") || !c16.equalsIgnoreCase("") || !c17.equalsIgnoreCase("") || !c18.equalsIgnoreCase("") || !c19.equalsIgnoreCase("")){
