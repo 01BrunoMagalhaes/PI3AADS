@@ -25,9 +25,9 @@ void verificaNivelAgua(String a){
 
 String retornaStatusBoia(){
   if(validarNivel){
-    return "Ativo";
+    return "Ligado";
   }else{
-    return "Desativado";
+    return "Desligado";
   }
 }
 

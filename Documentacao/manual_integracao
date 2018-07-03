@@ -14,12 +14,12 @@ Considerar também a posição, ela se refere ao número do rele; primeira posi�
 o relé 1. 
 ####################################################################
 Código: 02
-URL: "10.0.0.2/02/27.1&28"
-Descrição: Modificar a temperatura minima e máxima, para consequentemente acionar o arrefecimento ou aquecimento.
+URL: "10.0.0.2/02/26&27&26.5
+Descrição: Modificar a temperatura minima, máxima e ideal, para consequentemente acionar o arrefecimento ou aquecimento.
 
-O primeiro parâmetro é a temperatura minima, no exemplo "27.1", e o segundo a temperatura máxima "28".
-Obs.: -Sempre separar os dois parâmetros através do caractere "&". 
-      -Caso os dois parâmetros sejam "0", o controle de temperatura não será feito, e os relés correspondetes serão desligados.	
+O primeiro parâmetro é a temperatura minima, no exemplo "26", o segundo a temperatura máxima "27", e o terceiro a temperatura ideal "26.5".
+Obs.: -Sempre separar os três parâmetros através do caractere "&". 
+      -Caso os três parâmetros sejam "0", o controle de temperatura não será feito, e os relés correspondetes serão desligados.	
 ####################################################################
 Código: 03
 URL: "10.0.0.2/03/?"

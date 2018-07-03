@@ -52,9 +52,9 @@ void simularIluminacaoAutomatica(){
 
 String retornaStatusIluminacao(){
   if(iluminacaoAutomatica){
-    return "automatica";
+    return "Automática";
   }else{
-    return "manual";
+    return "Manual";
   }
 }
 

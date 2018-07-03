@@ -56,7 +56,9 @@ void verificaClients() {
               tempObject["ideal"] = tIdeal;
               tempObject["minima"] = tMin;
               tempObject["maxima"] = tMax;
-
+              tempObject["aquecimento"] = statusRele2(r2);
+              tempObject["resfriamento"] = statusRele2(r1);
+              
               JsonArray& relesArray = aquarioObject.createNestedArray("tomadas");
               JsonObject& relesObject = jsonBuffer.createObject();
               relesArray.add(relesObject);

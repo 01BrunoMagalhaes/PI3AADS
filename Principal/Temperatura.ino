@@ -2,40 +2,48 @@ OneWire  sensorTemp(t);
 
 void verificaAquecerResfriar(String a){
   if(!a.equalsIgnoreCase("")){
-    Serial.print("Completa: ");Serial.println(a);
-    tMin = a.substring(0, a.indexOf("&")).toFloat();
-    a.replace(a.substring(0, a.indexOf("&")) + "&", "");
-    tMax = a.substring(0, a.indexOf("&")).toFloat();
-    a.replace(a.substring(0, a.indexOf("&")) + "&", "");
-    tIdeal = a.substring(0, a.length()).toFloat();
+    if(a.equals("0&0&0")){
+      validarTemperatura = false;
+    }else if(a.equals("200&200&200")){
+      validarTemperatura = true;
+    }else{
+      validarTemperatura = true;
+      tMin = a.substring(0, a.indexOf("&")).toFloat();
+      a.replace(a.substring(0, a.indexOf("&")) + "&", "");
+      tMax = a.substring(0, a.indexOf("&")).toFloat();
+      a.replace(a.substring(0, a.indexOf("&")) + "&", "");
+      tIdeal = a.substring(0, a.length()).toFloat();
+    }
   }
 }
 
 String retornaStatusTemperatura(){
   if(validarTemperatura){
-    return "Ativo";
+    return "Ligado";
   }else{
-    return "Desativado";
+    return "Desligado";
   }
 }
 
-void verificaTemperatura(float baixa, float alta){
-  if(baixa == 0 && alta == 0){
+void verificaTemperatura(float baixa, float alta, float ideal){
+  if(!validarTemperatura && baixa == 0 && alta == 0 && ideal == 0){
     validarTemperatura = false;
     ligarDesligarRele(r1, 0);
     ligarDesligarRele(r2, 0);
-  }else{
+  }else if(validarTemperatura && !baixa == 0 && !alta == 0 && !ideal == 0){
     validarTemperatura = true;
     if(temperaturaAtual() >= alta){
       Serial.println(F("Ligando resfriamento."));
       ligarDesligarRele(r1, 1);
+      ligarDesligarRele(r2, 0);
     }else if(temperaturaAtual() <= baixa){
       Serial.println(F("Ligando aquecimento."));
       ligarDesligarRele(r2, 1);
-    }else{
+      ligarDesligarRele(r1, 0);
+    }
+  }else if(!validarTemperatura){
       ligarDesligarRele(r1, 0);
       ligarDesligarRele(r2, 0);
-    }
   }
 }
 

@@ -43,6 +43,15 @@ String statusRele(int posicaoRele){
   }
 }
 
+String statusRele2(int posicaoRele){
+  int s = digitalRead(posicaoRele);
+  if(s == 1){
+    return "Desligado";
+  }else{
+    return "Ligado";
+  }
+}
+
 void verificaReles(String a){
   if(!a.equalsIgnoreCase("")){
     ligarDesligarRele(r4, a.substring(0,1));

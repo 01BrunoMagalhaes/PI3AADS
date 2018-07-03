@@ -45,7 +45,7 @@ void loop() {
   Serial.print(F("Temperatura: ")); Serial.println(temperaturaAtual());
   Serial.print(F("Data: ")); Serial.print(retornarData()); Serial.print(F(" Hora: ")); Serial.println(retornarHora());
 
-  verificaTemperatura(tMin, tMax);
+  verificaTemperatura(tMin, tMax, tIdeal);
   verificaNivelAgua(validarNivel);
   verificaIluminacao();
   verificaClients();
