@@ -37,9 +37,9 @@ void ligarDesligarRele(int posicaoRele, String ligar){
 String statusRele(int posicaoRele){
   int s = digitalRead(posicaoRele);
   if(s == 1){
-    return "Desligado";
+    return "Desligada";
   }else{
-    return "Ligado";
+    return "Ligada";
   }
 }
 
