@@ -85,6 +85,12 @@ void verificaClients() {
               pAtualArray.add(pAtualObject);
               pAtualObject["azul"] = potenciaAzulAtual;
               pAtualObject["branco"] = potenciaBrancaAtual;
+
+              JsonArray& pManualArray = aquarioObject.createNestedArray("potenciaManual");
+              JsonObject& pManualObject = jsonBuffer.createObject();
+              pManualArray.add(pManualObject);
+              pManualObject["azul"] = valoresTesteIluminacao.substring(0, valoresTesteIluminacao.indexOf("&")).toFloat();
+              pManualObject["branco"] = valoresTesteIluminacao.substring(valoresTesteIluminacao.indexOf("&")+1, valoresTesteIluminacao.length()).toFloat();
               
               JsonArray& potenciaAzulArray = aquarioObject.createNestedArray("potenciaAzul");
               JsonObject& potenciaAzulObject = jsonBuffer.createObject();

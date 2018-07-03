@@ -52,22 +52,36 @@ void simularIluminacaoAutomatica(){
 
 String retornaStatusIluminacao(){
   if(iluminacaoAutomatica){
-    return "Ativo";
+    return "automatica";
   }else{
-    return "Desativado";
+    return "manual";
   }
 }
 
 void testarIluminacao(String a){
   if(!a.equalsIgnoreCase("")){
     if(a.equalsIgnoreCase("0&0")){
-      valoresTesteIluminacao = "";
-      testeIluminacao = false;
-      iluminacaoAutomatica = true;
+      valoresTesteIluminacao = "0&0";
+      testeIluminacao = true;
+      iluminacaoAutomatica = false;
       potenciaAzulAtual = 0;
       potenciaBrancaAtual = 0;
       analogWrite(canalAzul, map(0, 0, 100, 0, 255));
       analogWrite(canalBranco, map(0, 0, 100, 0, 255));
+    }else if(a.equalsIgnoreCase("200&200")){
+      testeIluminacao = false;
+      iluminacaoAutomatica = true;  
+      potenciaAzulAtual = 0;
+      potenciaBrancaAtual = 0;
+      analogWrite(canalAzul, map(0, 0, 100, 0, 255));
+      analogWrite(canalBranco, map(0, 0, 100, 0, 255));  
+    }else if(a.equalsIgnoreCase("300&300")){
+      testeIluminacao = true;
+      iluminacaoAutomatica = false;  
+      potenciaAzulAtual = valoresTesteIluminacao.substring(0, valoresTesteIluminacao.indexOf("&")).toFloat();
+      potenciaBrancaAtual = valoresTesteIluminacao.substring(valoresTesteIluminacao.indexOf("&")+1, valoresTesteIluminacao.length()).toFloat();
+      analogWrite(canalAzul, map(valoresTesteIluminacao.substring(0, valoresTesteIluminacao.indexOf("&")).toFloat(), 0, 100, 0, 255));
+      analogWrite(canalBranco, map(valoresTesteIluminacao.substring(valoresTesteIluminacao.indexOf("&")+1, valoresTesteIluminacao.length()).toFloat(), 0, 100, 0, 255));
     }else{
       valoresTesteIluminacao = a;
       testeIluminacao = true;

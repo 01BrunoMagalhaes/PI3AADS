@@ -36,7 +36,9 @@ A iluminação em modo manual ativada manterá a iluminação ligada com valores
 
 O primeiro valor é referente a potência da iluminação do canal azul e o segundo se refere a potência do canal branco.
 A potência de cada canal vai de 0 até 100.
-Caso seja passado "0&0" o modo manual será desativado e a iluminação ficará no modo automático.
+Caso seja passado "0&0" o modo manual será ativado e a iluminação ficará desligada.
+Caso seja passado "200&200" o modo manual será desativado e a iluminação ficará no modo automático.
+Caso seja passado "300&300" o modo manual será ativado e a iluminação ficará no modo manual conforme valores informados anteriormente.
 Obs.: -Por padrão o modo manual de iluminação do arduino fica desativado.	
 ####################################################################
 Código: 05
