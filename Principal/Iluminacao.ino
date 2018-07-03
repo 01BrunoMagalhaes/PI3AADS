@@ -153,43 +153,43 @@ void verificaCanalAzul(){
   if(!c10.equalsIgnoreCase("") || !c11.equalsIgnoreCase("") || !c12.equalsIgnoreCase("") || !c13.equalsIgnoreCase("") || !c14.equalsIgnoreCase("")
       || !c15.equalsIgnoreCase("") || !c16.equalsIgnoreCase("") || !c17.equalsIgnoreCase("") || !c18.equalsIgnoreCase("") || !c19.equalsIgnoreCase("")){
     iluminacaoAutomatica = true;
-    if(retornaHoraInteira(c10) >= retornaHoraInteira(retornarHoraSemSegundos()) && retornaHoraInteira(retornarHoraSemSegundos()) < retornaHoraInteira(c11)){
+    if(retornaHoraInteira(retornarHoraSemSegundos()) >= retornaHoraInteira(c10) && retornaHoraInteira(retornarHoraSemSegundos()) < retornaHoraInteira(c11)){
       int brilho = map(b10, 0, 100, 0, 255);
       analogWrite(canalAzul, brilho);
       potenciaAzulAtual = b10;
-    }else if(retornarHoraSemSegundos().equalsIgnoreCase(c11)){
+    }else if(retornaHoraInteira(retornarHoraSemSegundos()) >= retornaHoraInteira(c11) && retornaHoraInteira(retornarHoraSemSegundos()) < retornaHoraInteira(c12)){
       int brilho = map(b11, 0, 100, 0, 255);
       analogWrite(canalAzul, brilho);
       potenciaAzulAtual = b11;
-    }else if(retornarHoraSemSegundos().equalsIgnoreCase(c12)){
+    }else if(retornaHoraInteira(retornarHoraSemSegundos()) >= retornaHoraInteira(c12) && retornaHoraInteira(retornarHoraSemSegundos()) < retornaHoraInteira(c13)){
       int brilho = map(b12, 0, 100, 0, 255);
       analogWrite(canalAzul, brilho);
       potenciaAzulAtual = b12;
-    }else if(retornarHoraSemSegundos().equalsIgnoreCase(c13)){
+    }else if(retornaHoraInteira(retornarHoraSemSegundos()) >= retornaHoraInteira(c13) && retornaHoraInteira(retornarHoraSemSegundos()) < retornaHoraInteira(c14)){
       int brilho = map(b13, 0, 100, 0, 255);
       analogWrite(canalAzul, brilho);
       potenciaAzulAtual = b13;
-    }else if(retornarHoraSemSegundos().equalsIgnoreCase(c14)){
+    }else if(retornaHoraInteira(retornarHoraSemSegundos()) >= retornaHoraInteira(c14) && retornaHoraInteira(retornarHoraSemSegundos()) < retornaHoraInteira(c15)){
       int brilho = map(b14, 0, 100, 0, 255);
       analogWrite(canalAzul, brilho);
       potenciaAzulAtual = b14;
-    }else if(retornarHoraSemSegundos().equalsIgnoreCase(c15)){
+    }else if(retornaHoraInteira(retornarHoraSemSegundos()) >= retornaHoraInteira(c15) && retornaHoraInteira(retornarHoraSemSegundos()) < retornaHoraInteira(c16)){
       int brilho = map(b15, 0, 100, 0, 255);
       analogWrite(canalAzul, brilho);
       potenciaAzulAtual = b15;
-    }else if(retornarHoraSemSegundos().equalsIgnoreCase(c16)){
+    }else if(retornaHoraInteira(retornarHoraSemSegundos()) >= retornaHoraInteira(c16) && retornaHoraInteira(retornarHoraSemSegundos()) < retornaHoraInteira(c17)){
       int brilho = map(b16, 0, 100, 0, 255);
       analogWrite(canalAzul, brilho);
       potenciaAzulAtual = b16;
-    }else if(retornarHoraSemSegundos().equalsIgnoreCase(c17)){
+    }else if(retornaHoraInteira(retornarHoraSemSegundos()) >= retornaHoraInteira(c17) && retornaHoraInteira(retornarHoraSemSegundos()) < retornaHoraInteira(c18)){
       int brilho = map(b17, 0, 100, 0, 255);
       analogWrite(canalAzul, brilho);
       potenciaAzulAtual = b17;
-    }else if(retornarHoraSemSegundos().equalsIgnoreCase(c18)){
+    }else if(retornaHoraInteira(retornarHoraSemSegundos()) >= retornaHoraInteira(c18) && retornaHoraInteira(retornarHoraSemSegundos()) < retornaHoraInteira(c19)){
       int brilho = map(b18, 0, 100, 0, 255);
       analogWrite(canalAzul, brilho);
       potenciaAzulAtual = b18;
-    }else if(retornarHoraSemSegundos().equalsIgnoreCase(c19)){
+    }else if(retornaHoraInteira(retornarHoraSemSegundos()) >= retornaHoraInteira(c19) && retornaHoraInteira(retornarHoraSemSegundos()) < retornaHoraInteira(c10)){
       int brilho = map(b19, 0, 100, 0, 255);
       analogWrite(canalAzul, brilho);
       potenciaAzulAtual = b19;
@@ -201,43 +201,43 @@ void verificaCanalBranco(){
   if(!c20.equalsIgnoreCase("") || !c21.equalsIgnoreCase("") || !c22.equalsIgnoreCase("") || !c23.equalsIgnoreCase("") || !c24.equalsIgnoreCase("")
       || !c25.equalsIgnoreCase("") || !c26.equalsIgnoreCase("") || !c27.equalsIgnoreCase("") || !c28.equalsIgnoreCase("") || !c29.equalsIgnoreCase("")){
     iluminacaoAutomatica = true;
-    if(retornarHoraSemSegundos().equalsIgnoreCase(c20)){
+    if(retornaHoraInteira(retornarHoraSemSegundos()) >= retornaHoraInteira(c20) && retornaHoraInteira(retornarHoraSemSegundos()) < retornaHoraInteira(c21)){
       int brilho = map(b20, 0, 100, 0, 255);
       analogWrite(canalBranco, brilho);
       potenciaBrancaAtual = b20;
-    }else if(retornarHoraSemSegundos().equalsIgnoreCase(c21)){
+    }else if(retornaHoraInteira(retornarHoraSemSegundos()) >= retornaHoraInteira(c21) && retornaHoraInteira(retornarHoraSemSegundos()) < retornaHoraInteira(c22)){
       int brilho = map(b21, 0, 100, 0, 255);
       analogWrite(canalBranco, brilho);
       potenciaBrancaAtual = b21;
-    }else if(retornarHoraSemSegundos().equalsIgnoreCase(c22)){
+    }else if(retornaHoraInteira(retornarHoraSemSegundos()) >= retornaHoraInteira(c22) && retornaHoraInteira(retornarHoraSemSegundos()) < retornaHoraInteira(c23)){
       int brilho = map(b22, 0, 100, 0, 255);
       analogWrite(canalBranco, brilho);
       potenciaBrancaAtual = b22;
-    }else if(retornarHoraSemSegundos().equalsIgnoreCase(c23)){
+    }else if(retornaHoraInteira(retornarHoraSemSegundos()) >= retornaHoraInteira(c23) && retornaHoraInteira(retornarHoraSemSegundos()) < retornaHoraInteira(c24)){
       int brilho = map(b23, 0, 100, 0, 255);
       analogWrite(canalBranco, brilho);
       potenciaBrancaAtual = b23;
-    }else if(retornarHoraSemSegundos().equalsIgnoreCase(c24)){
+    }else if(retornaHoraInteira(retornarHoraSemSegundos()) >= retornaHoraInteira(c24) && retornaHoraInteira(retornarHoraSemSegundos()) < retornaHoraInteira(c25)){
       int brilho = map(b24, 0, 100, 0, 255);
       analogWrite(canalBranco, brilho);
       potenciaBrancaAtual = b24;
-    }else if(retornarHoraSemSegundos().equalsIgnoreCase(c25)){
+    }else if(retornaHoraInteira(retornarHoraSemSegundos()) >= retornaHoraInteira(c25) && retornaHoraInteira(retornarHoraSemSegundos()) < retornaHoraInteira(c26)){
       int brilho = map(b25, 0, 100, 0, 255);
       analogWrite(canalBranco, brilho);
       potenciaBrancaAtual = b25;
-    }else if(retornarHoraSemSegundos().equalsIgnoreCase(c26)){
+    }else if(retornaHoraInteira(retornarHoraSemSegundos()) >= retornaHoraInteira(c26) && retornaHoraInteira(retornarHoraSemSegundos()) < retornaHoraInteira(c27)){
       int brilho = map(b26, 0, 100, 0, 255);
       analogWrite(canalBranco, brilho);
       potenciaBrancaAtual = b26;
-    }else if(retornarHoraSemSegundos().equalsIgnoreCase(c27)){
+    }else if(retornaHoraInteira(retornarHoraSemSegundos()) >= retornaHoraInteira(c27) && retornaHoraInteira(retornarHoraSemSegundos()) < retornaHoraInteira(c28)){
       int brilho = map(b27, 0, 100, 0, 255);
       analogWrite(canalBranco, brilho);
       potenciaBrancaAtual = b27;
-    }else if(retornarHoraSemSegundos().equalsIgnoreCase(c28)){
+    }else if(retornaHoraInteira(retornarHoraSemSegundos()) >= retornaHoraInteira(c28) && retornaHoraInteira(retornarHoraSemSegundos()) < retornaHoraInteira(c29)){
       int brilho = map(b28, 0, 100, 0, 255);
       analogWrite(canalBranco, brilho);
       potenciaBrancaAtual = b28;
-    }else if(retornarHoraSemSegundos().equalsIgnoreCase(c29)){
+    }else if(retornaHoraInteira(retornarHoraSemSegundos()) >= retornaHoraInteira(c29) && retornaHoraInteira(retornarHoraSemSegundos()) < retornaHoraInteira(c20)){
       int brilho = map(b29, 0, 100, 0, 255);
       analogWrite(canalBranco, brilho);
       potenciaBrancaAtual = b29;
