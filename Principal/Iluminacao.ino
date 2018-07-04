@@ -14,40 +14,40 @@ void verificaIluminacao(){
 void simularIluminacaoAutomatica(){
   analogWrite(canalAzul, map(0, 0, 100, 0, 255));
   analogWrite(canalBranco, map(0, 0, 100, 0, 255));
-  delay(2000);
+  delay(1000);
   analogWrite(canalAzul, map(b10, 0, 100, 0, 255));
   analogWrite(canalBranco, map(b20, 0, 100, 0, 255));
-  delay(5000);
+  delay(2000);
   analogWrite(canalAzul, map(b11, 0, 100, 0, 255));
   analogWrite(canalBranco, map(b21, 0, 100, 0, 255));
-  delay(5000);
+  delay(2000);
   analogWrite(canalAzul, map(b12, 0, 100, 0, 255));
   analogWrite(canalBranco, map(b22, 0, 100, 0, 255));
-  delay(5000);
+  delay(2000);
   analogWrite(canalAzul, map(b13, 0, 100, 0, 255));
   analogWrite(canalBranco, map(b23, 0, 100, 0, 255));
-  delay(5000);
+  delay(2000);
   analogWrite(canalAzul, map(b14, 0, 100, 0, 255));
   analogWrite(canalBranco, map(b24, 0, 100, 0, 255));
-  delay(5000);
+  delay(2000);
   analogWrite(canalAzul, map(b15, 0, 100, 0, 255));
   analogWrite(canalBranco, map(b25, 0, 100, 0, 255));
-  delay(5000);
+  delay(2000);
   analogWrite(canalAzul, map(b16, 0, 100, 0, 255));
   analogWrite(canalBranco, map(b26, 0, 100, 0, 255));
-  delay(5000);
+  delay(2000);
   analogWrite(canalAzul, map(b17, 0, 100, 0, 255));
   analogWrite(canalBranco, map(b27, 0, 100, 0, 255));
-  delay(5000);
+  delay(2000);
   analogWrite(canalAzul, map(b18, 0, 100, 0, 255));
   analogWrite(canalBranco, map(b28, 0, 100, 0, 255));
-  delay(5000);
+  delay(2000);
   analogWrite(canalAzul, map(b19, 0, 100, 0, 255));
   analogWrite(canalBranco, map(b29, 0, 100, 0, 255));
-  delay(5000);
+  delay(2000);
   analogWrite(canalAzul, map(0, 0, 100, 0, 255));
   analogWrite(canalBranco, map(0, 0, 100, 0, 255));
-  delay(2000);
+  delay(1000);
 }
 
 String retornaStatusIluminacao(){
