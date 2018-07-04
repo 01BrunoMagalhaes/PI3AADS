@@ -35,10 +35,11 @@ void verificaNivelAgua(boolean on){
   if(on){
     if(isBoiaAcionada()){
       qtdReposicoes ++;
-    }
-    while(isBoiaAcionada()){
       ligarDesligarRele(r3, 1);
+    }else{
+      ligarDesligarRele(r3, 0);   
     }
-  }
-  ligarDesligarRele(r3, 0);
+  }else{
+    ligarDesligarRele(r3, 0);
+  }    
 }

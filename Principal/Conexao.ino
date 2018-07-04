@@ -62,11 +62,11 @@ void verificaClients() {
               JsonArray& relesArray = aquarioObject.createNestedArray("tomadas");
               JsonObject& relesObject = jsonBuffer.createObject();
               relesArray.add(relesObject);
-              relesObject["t1"] = statusRele(r4);
-              relesObject["t2"] = statusRele(r5);
-              relesObject["t3"] = statusRele(r6);
-              relesObject["t4"] = statusRele(r7);
-              relesObject["t5"] = statusRele(r8);
+              relesObject["t1"] = statusRele3(r4);
+              relesObject["t2"] = statusRele3(r5);
+              relesObject["t3"] = statusRele3(r6);
+              relesObject["t4"] = statusRele3(r7);
+              relesObject["t5"] = statusRele3(r8);
 
               JsonArray& controlsArray = aquarioObject.createNestedArray("controles");
               JsonObject& controlsObject = jsonBuffer.createObject();
