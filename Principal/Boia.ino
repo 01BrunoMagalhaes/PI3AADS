@@ -34,12 +34,17 @@ String retornaStatusBoia(){
 void verificaNivelAgua(boolean on){
   if(on){
     if(isBoiaAcionada()){
-      qtdReposicoes ++;
+      if(!reposicaoLigada){
+        qtdReposicoes ++;
+        reposicaoLigada = true;
+      }
       ligarDesligarRele(r3, 1);
     }else{
+      reposicaoLigada = false;
       ligarDesligarRele(r3, 0);   
     }
   }else{
+    reposicaoLigada = false;
     ligarDesligarRele(r3, 0);
   }    
 }

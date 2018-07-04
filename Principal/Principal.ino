@@ -26,6 +26,7 @@ boolean validarNivel = false;
 boolean validarTemperatura = false;
 boolean iluminacaoAutomatica = false;
 boolean testeIluminacao = false;
+boolean reposicaoLigada = false;
 
 float potenciaAzulAtual = 0, potenciaBrancaAtual = 0;
 
